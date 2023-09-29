@@ -47,7 +47,7 @@ class SignInController extends GetxController {
     if (password.value.isEmpty) {
       passwordErrorMessage.value = 'Password can not be empty';
     } else if (password.value.length < 8) {
-      passwordErrorMessage.value = 'Password be at least 8 characters';
+      passwordErrorMessage.value = 'Password must be at least 8 characters';
     } else {
       passwordErrorMessage.value = "";
     }
