@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,7 +20,6 @@ class ViewCategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(docId);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
@@ -27,7 +28,7 @@ class ViewCategoryScreen extends StatelessWidget {
           elevation: 0,
           title: Text(
             category ?? '',
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white, fontWeight: FontWeight.w500, fontSize: 20),
           ),
           backgroundColor: Colors.black,

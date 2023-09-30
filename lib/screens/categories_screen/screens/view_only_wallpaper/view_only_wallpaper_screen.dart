@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -21,6 +23,7 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
   List? imageList;
   String image;
   String? id;
+
   ViewOnlyWallpaperScreen(
       {Key? key,
       required this.image,
@@ -47,7 +50,7 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Stack(
                         children: [
-                          Container(
+                          SizedBox(
                             height: Get.height,
                             width: Get.width,
                             child: CachedNetworkImage(
@@ -84,12 +87,12 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                           shape: BoxShape.circle,
                                           color: Colors.white.withOpacity(0.3),
                                         ),
-                                        child: Icon(Icons.close),
+                                        child: const Icon(Icons.close),
                                       ),
                                     ),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 viewOnlyWallpaperController.isMenuOpen
                                     ? Row(
                                         mainAxisAlignment:
@@ -111,13 +114,13 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                                 color: Colors.white
                                                     .withOpacity(0.3),
                                               ),
-                                              child: Icon(Icons.lock),
+                                              child: const Icon(Icons.lock),
                                             ),
                                           ),
                                         ],
                                       )
-                                    : SizedBox(),
-                                SizedBox(
+                                    : const SizedBox(),
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 viewOnlyWallpaperController.isMenuOpen
@@ -140,13 +143,13 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                                 color: Colors.white
                                                     .withOpacity(0.3),
                                               ),
-                                              child: Icon(Icons.home),
+                                              child: const Icon(Icons.home),
                                             ),
                                           ),
                                         ],
                                       )
-                                    : SizedBox(),
-                                SizedBox(
+                                    : const SizedBox(),
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 Row(
@@ -169,7 +172,7 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                                 color: Colors.white
                                                     .withOpacity(0.3),
                                               ),
-                                              child: Icon(
+                                              child: const Icon(
                                                 Icons.close,
                                                 color: Colors.black,
                                               ),
@@ -191,13 +194,13 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                                 color: Colors.white
                                                     .withOpacity(0.3),
                                               ),
-                                              child: Icon(
+                                              child: const Icon(
                                                 Icons.menu,
                                                 color: Colors.black,
                                               ),
                                             ),
                                           ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     GestureDetector(
@@ -230,17 +233,17 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                           color: Colors.white.withOpacity(0.3),
                                         ),
                                         child: imageList![index]['isFav']
-                                            ? Icon(
+                                            ? const Icon(
                                                 Icons.favorite_outlined,
                                                 color: Colors.black,
                                               )
-                                            : Icon(
+                                            : const Icon(
                                                 Icons.favorite_outline_sharp,
                                                 color: Colors.black,
                                               ),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     GestureDetector(
@@ -289,7 +292,7 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                             ),
                                           )),
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     GestureDetector(
                                       onTap: () async {
                                         viewOnlyWallpaperController
@@ -315,7 +318,7 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                                 .downloadImages);
                                         var data = PrefService.getList(
                                             PrefKeys.downloadImageList);
-                                        print(data);
+
                                         viewOnlyWallpaperController
                                             .loader.value = false;
                                         viewOnlyWallpaperController
@@ -334,7 +337,7 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                           shape: BoxShape.circle,
                                           color: Colors.white.withOpacity(0.3),
                                         ),
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.arrow_downward_sharp,
                                           color: Colors.black,
                                         ),
@@ -353,7 +356,7 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
               ),
               viewOnlyWallpaperController.loader.value
                   ? const Center(child: CircularProgressIndicator())
-                  : SizedBox(),
+                  : const SizedBox(),
             ],
           );
         }));

@@ -7,6 +7,7 @@ class DownloadController extends GetxController {
   List images = [];
   List imageFinalList = [];
   List myBoolList = [];
+
   @override
   void onInit() {
     // TODO: implement onInit
@@ -43,19 +44,14 @@ class DownloadController extends GetxController {
       for (int i = 0; i < images.length; i++) {
         myDownloadList.add(images[i]);
       }
-      print(myDownloadList);
 
       for (int i = 0; i < myDownloadList.length; i++) {
         for (int j = 0; j < myFavList.length; j++) {
           if (myDownloadList[i] == myFavList[j]) {
             myBoolList[i] = true;
-            print(myBoolList);
           } else {}
         }
       }
-      print(myBoolList);
-    } else {
-      print("hello");
-    }
+    } else {}
   }
 }

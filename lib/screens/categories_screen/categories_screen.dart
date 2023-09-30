@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +49,6 @@ class CategoriesScreen extends StatelessWidget {
                     if (snapshot.data != null) {
                       int length = snapshot.data!.docs.length + 2;
                       if (snapshot.hasData) {
-                        print(length);
                         return Expanded(
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -64,7 +65,7 @@ class CategoriesScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 if ((index == length - 2) ||
                                     (index == length - 1)) {
-                                  return Container(
+                                  return SizedBox(
                                     height: 50,
                                     width: Get.width * 0.1,
                                   );
@@ -74,15 +75,10 @@ class CategoriesScreen extends StatelessWidget {
                                       ? GestureDetector(
                                           onTap: () {
                                             Get.to(ViewCategoryScreen(
-                                              images: [
-                                                {
-                                                  'imageLink':
-                                                      'https://w0.peakpx.com/wallpaper/265/481/HD-wallpaper-nature.jpg',
-                                                  'isFav': false,
-                                                }
-                                              ],
+                                              images: const [],
                                               docId: '',
-                                              category: 'asset',
+                                              category: snapshot
+                                                  .data?.docs[index]['name'],
                                             ));
                                           },
                                           child: Container(
@@ -224,7 +220,7 @@ class CategoriesScreen extends StatelessWidget {
                         );
                       }
                     } else {
-                      return SizedBox();
+                      return const SizedBox();
                     }
                   },
                 ),

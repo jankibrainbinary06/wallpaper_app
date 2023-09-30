@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_function_literals_in_foreach_calls
+// ignore_for_file: must_be_immutable, non_constant_identifier_names
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,6 +47,7 @@ class HomeController extends GetxController {
   ];
   List allImage = [];
   List myBoolList = [];
+
   onTapCategory(int index, int length, String id) {
     allImage = [];
     aBoolList = List.generate(length, (index) => false);
@@ -68,7 +72,6 @@ class HomeController extends GetxController {
               update(['data']);
             });
           });
-          print(allImage);
         });
       } else {
         FirebaseFirestore.instance.collection('category').get().then((value) {
@@ -86,7 +89,6 @@ class HomeController extends GetxController {
               });
             }
           });
-          print(allImage);
         });
       }
       update(['boolList']);
@@ -119,7 +121,7 @@ class HomeController extends GetxController {
 
   Future<void> onTapImage2(String docId, length) async {
     myBoolList = [];
-    print(docId);
+
     myBoolList = List.generate(length, (index) => false);
 
     var myFavList = [];
@@ -145,7 +147,6 @@ class HomeController extends GetxController {
               myCategoryList.add(e['imageLink']);
             });
           });
-          print(myCategoryList);
         });
       } else {
         await category.doc(docId).get().then((value) {
@@ -155,7 +156,6 @@ class HomeController extends GetxController {
           for (int i = 0; i < list.length; i++) {
             myCategoryList.add(list[i]['imageLink']);
           }
-          print(myCategoryList);
         });
       }
 
@@ -163,13 +163,9 @@ class HomeController extends GetxController {
         for (int j = 0; j < myFavList.length; j++) {
           if (myCategoryList[i] == myFavList[j]) {
             myBoolList[i] = true;
-            print(myBoolList);
           } else {}
         }
       }
-      print(myBoolList);
-    } else {
-      print("hello");
-    }
+    } else {}
   }
 }

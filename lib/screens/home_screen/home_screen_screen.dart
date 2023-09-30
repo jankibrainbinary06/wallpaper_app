@@ -1,4 +1,5 @@
 // ignore_for_file: must_be_immutable
+// ignore_for_file: avoid_function_literals_in_foreach_calls
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -168,14 +169,13 @@ class HomeScreen extends StatelessWidget {
                                         homeController.allImage.length +
                                             3 -
                                             3)) {
-                                  return Container(
+                                  return SizedBox(
                                     height: Get.height * 0.19,
                                     width: Get.width * 0.86,
                                   );
                                 } else {
                                   return GestureDetector(
                                     onTap: () async {
-                                      print(homeController.aBoolList[0]);
                                       if (homeController.aBoolList[0] == true) {
                                         await homeController.onTapImage2('1',
                                             homeController.allImage.length);

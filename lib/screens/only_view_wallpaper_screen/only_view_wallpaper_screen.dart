@@ -1,4 +1,5 @@
 // ignore_for_file: must_be_immutable
+// ignore_for_file: avoid_function_literals_in_foreach_calls
 
 import 'dart:io';
 import 'dart:typed_data';
@@ -24,6 +25,7 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
   String docId;
   List imageList;
   List favBoolList;
+
   OnlyViewWallpaperScreen(
       {required this.image,
       required this.docId,
@@ -37,8 +39,7 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     onlyViewWallpaperController.onInit();
-    print(favBoolList.length);
-    print(imageList.length);
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(child: Obx(() {
@@ -53,13 +54,13 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Stack(
                       children: [
-                        Container(
+                        SizedBox(
                           height: Get.height,
                           width: Get.width,
                           child: CachedNetworkImage(
                             height: Get.height * 0.184,
                             width: Get.width * 0.86,
-                            imageUrl: imageList![index]['imageLink'],
+                            imageUrl: imageList[index]['imageLink'],
                             fit: BoxFit.cover,
                             placeholder: (context, url) => Image.asset(
                               AssetRes.imagePlaceholder,
@@ -90,12 +91,12 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                         shape: BoxShape.circle,
                                         color: Colors.white.withOpacity(0.3),
                                       ),
-                                      child: Icon(Icons.close),
+                                      child: const Icon(Icons.close),
                                     ),
                                   ),
                                 ],
                               ),
-                              Spacer(),
+                              const Spacer(),
                               onlyViewWallpaperController.isMenuOpen
                                   ? Row(
                                       mainAxisAlignment:
@@ -117,13 +118,13 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                               color:
                                                   Colors.white.withOpacity(0.3),
                                             ),
-                                            child: Icon(Icons.lock),
+                                            child: const Icon(Icons.lock),
                                           ),
                                         ),
                                       ],
                                     )
-                                  : SizedBox(),
-                              SizedBox(
+                                  : const SizedBox(),
+                              const SizedBox(
                                 height: 15,
                               ),
                               onlyViewWallpaperController.isMenuOpen
@@ -146,13 +147,13 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                               color:
                                                   Colors.white.withOpacity(0.3),
                                             ),
-                                            child: Icon(Icons.home),
+                                            child: const Icon(Icons.home),
                                           ),
                                         ),
                                       ],
                                     )
-                                  : SizedBox(),
-                              SizedBox(
+                                  : const SizedBox(),
+                              const SizedBox(
                                 height: 15,
                               ),
                               Row(
@@ -175,7 +176,7 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                               color:
                                                   Colors.white.withOpacity(0.3),
                                             ),
-                                            child: Icon(
+                                            child: const Icon(
                                               Icons.close,
                                               color: Colors.black,
                                             ),
@@ -197,13 +198,13 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                               color:
                                                   Colors.white.withOpacity(0.3),
                                             ),
-                                            child: Icon(
+                                            child: const Icon(
                                               Icons.menu,
                                               color: Colors.black,
                                             ),
                                           ),
                                         ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   GestureDetector(
@@ -234,17 +235,17 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                         color: Colors.white.withOpacity(0.3),
                                       ),
                                       child: favBoolList[index]
-                                          ? Icon(
+                                          ? const Icon(
                                               Icons.favorite_outlined,
                                               color: Colors.black,
                                             )
-                                          : Icon(
+                                          : const Icon(
                                               Icons.favorite_outline_sharp,
                                               color: Colors.black,
                                             ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   GestureDetector(
@@ -290,13 +291,13 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                           ),
                                         )),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   GestureDetector(
                                     onTap: () async {
                                       onlyViewWallpaperController.loader.value =
                                           true;
                                       var response = await Dio().get(
-                                          imageList![index]['imageLink'],
+                                          imageList[index]['imageLink'],
                                           options: Options(
                                               responseType:
                                                   ResponseType.bytes));
@@ -314,10 +315,10 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                               .downloadImages);
                                       var data = PrefService.getList(
                                           PrefKeys.downloadImageList);
-                                      print(data);
+
                                       onlyViewWallpaperController.loader.value =
                                           false;
-                                      // Get.to(DownloadScreen());
+
                                       Get.snackbar(
                                           'Yay!!', "Image is downloaded",
                                           snackPosition: SnackPosition.TOP,
@@ -331,7 +332,7 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                         shape: BoxShape.circle,
                                         color: Colors.white.withOpacity(0.3),
                                       ),
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.arrow_downward_sharp,
                                         color: Colors.black,
                                       ),
@@ -349,8 +350,8 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
               },
             ),
             onlyViewWallpaperController.loader.value
-                ? Center(child: const CircularProgressIndicator())
-                : SizedBox()
+                ? const Center(child: CircularProgressIndicator())
+                : const SizedBox()
           ],
         );
       })),

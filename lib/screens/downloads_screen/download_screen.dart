@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +12,7 @@ import '../../utils/assets_res.dart';
 class DownloadScreen extends StatelessWidget {
   DownloadScreen({Key? key}) : super(key: key);
   DownloadController downloadController = Get.put(DownloadController());
+
   @override
   Widget build(BuildContext context) {
     downloadController.onInit();

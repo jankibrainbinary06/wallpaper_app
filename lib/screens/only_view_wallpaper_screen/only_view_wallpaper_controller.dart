@@ -1,8 +1,7 @@
+// ignore_for_file: avoid_function_literals_in_foreach_calls
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 import 'package:get/get.dart';
 import 'package:wallpaperapp/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:wallpaperapp/services/pref_servies.dart';
@@ -42,40 +41,34 @@ class OnlyViewWallpaperController extends GetxController {
   Future<void> onTapLike(String image, String categoryDocId, bool like) async {
     var id = PrefService.getString('docId');
     var isUser = PrefService.getBool('isUser');
-    print(id);
-    print(isUser);
+
     List favList = [];
     if (isUser == true) {
       favList.clear();
       await user.get().then((value) {
         value.docs.forEach((element) {
           if (element.id == id) {
-            // favList = element['favourite'];
             element['favourite'].forEach((e) {
               favList.add({
                 'image': e['image'],
                 "isFav": e['isFav'],
               });
             });
-            print(favList.length);
           } else {}
         });
         favList.add({
           'image': image,
           'isFav': true,
         });
-        print(favList.length);
       });
       user.doc(id).update({
         'favourite': favList,
       });
-      // Get.off(FavoritesScreen());
     } else {
       isLike = false;
       update(['onlyView']);
       Get.to(SignInScreen());
     }
-    // updateToCategory(categoryDocId, image, like);
   }
 
   updateToCategory(String categoryDocId, String image, bool isLike) async {
@@ -97,7 +90,6 @@ class OnlyViewWallpaperController extends GetxController {
         }
       });
     });
-    print(list);
 
     await category.doc(categoryDocId).update({
       'image': list,
@@ -108,22 +100,19 @@ class OnlyViewWallpaperController extends GetxController {
       String image, String categoryDocId, bool like) async {
     var id = PrefService.getString('docId');
     var isUser = PrefService.getBool('isUser');
-    print(id);
-    print(isUser);
+
     List favList = [];
     if (isUser == true) {
       favList.clear();
       await user.get().then((value) {
         value.docs.forEach((element) {
           if (element.id == id) {
-            // favList = element['favourite'];
             element['favourite'].forEach((e) {
               favList.add({
                 'image': e['image'],
                 "isFav": e['isFav'],
               });
             });
-            print(favList.length);
           } else {}
         });
         for (int i = 0; i < favList.length; i++) {
@@ -131,8 +120,6 @@ class OnlyViewWallpaperController extends GetxController {
             favList.removeAt(i);
           }
         }
-
-        print(favList.length);
       });
       user.doc(id).update({
         'favourite': favList,
@@ -140,20 +127,6 @@ class OnlyViewWallpaperController extends GetxController {
       // Get.off(FavoritesScreen());
     } else {
       Get.to(SignInScreen());
-    }
-    // updateToCategory(categoryDocId, image, like);
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> setWallpaperFromFile(String wallpaper) async {
-    var result;
-    var file = await DefaultCacheManager().getSingleFile(wallpaper);
-
-    try {
-      result = await WallpaperManager.setWallpaperFromFile(
-          file.path, WallpaperManager.HOME_SCREEN);
-    } on PlatformException {
-      result = 'Failed to get wallpaper.';
     }
   }
 }

@@ -12,7 +12,6 @@ import 'package:wallpaperapp/utils/strings.dart';
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
-  // AfterIntroController afterIntroController = Get.put(AfterIntroController());
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class SplashScreen extends StatelessWidget {
             SizedBox(height: Get.height * 0.06,),
             GestureDetector(
               onTap: () {
-                bool isSelected = PrefService.getBool('isSelected') ?? false;
+                bool isSelected = PrefService.getBool('isSelected') ;
                isSelected == true ? Get.offAll(DashBoardScreen()) :
                Get.to(SelectWallpaperViewScreen()) ;
               },

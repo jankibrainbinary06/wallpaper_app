@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -119,59 +121,7 @@ class FavoritesScreen extends StatelessWidget {
                                                         .withOpacity(0.5),
                                                     width: 0),
                                               ),
-                                              child: Stack(
-                                                alignment: Alignment.topRight,
-                                                children: [
-                                                  CachedNetworkImage(
-                                                    height: Get.height * 0.3,
-                                                    width: Get.width * 0.28,
-                                                    imageUrl: snapshot
-                                                            .data?['favourite']
-                                                        [index]['image'],
-                                                    fit: BoxFit.cover,
-                                                    placeholder:
-                                                        (context, url) =>
-                                                            Image.asset(
-                                                      AssetRes.imagePlaceholder,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                    errorWidget:
-                                                        (context, url, error) =>
-                                                            Image.asset(
-                                                      AssetRes.imagePlaceholder,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            top: 4, right: 4),
-                                                    child: GestureDetector(
-                                                        onTap: () {
-                                                          favoritesController
-                                                              .onTapLikeUnlike(
-                                                                  index);
-                                                        },
-                                                        child: SizedBox(
-                                                            height: (snapshot.data?['favourite']
-                                                                            [index]
-                                                                        [
-                                                                        'isFav'] ==
-                                                                    false)
-                                                                ? Get.height *
-                                                                    0.025
-                                                                : Get.height *
-                                                                    0.03,
-                                                            child: Image.asset(
-                                                                (snapshot.data?['favourite'][index]['isFav'] ==
-                                                                        false)
-                                                                    ? AssetRes
-                                                                        .LikeIcon
-                                                                    : AssetRes
-                                                                        .imageLike))),
-                                                  ),
-                                                ],
-                                              ),
+
                                             ),
                                             Container(
                                               height: Get.height * 0.18,
@@ -185,6 +135,59 @@ class FavoritesScreen extends StatelessWidget {
                                                     color: Colors.white
                                                         .withOpacity(0.5),
                                                     width: 0.5),
+                                              ),
+                                              child: Stack(
+                                                alignment: Alignment.topRight,
+                                                children: [
+                                                  CachedNetworkImage(
+                                                    height: Get.height * 0.3,
+                                                    width: Get.width * 0.28,
+                                                    imageUrl: snapshot
+                                                        .data?['favourite']
+                                                    [index]['image'],
+                                                    fit: BoxFit.cover,
+                                                    placeholder:
+                                                        (context, url) =>
+                                                        Image.asset(
+                                                          AssetRes.imagePlaceholder,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                    errorWidget:
+                                                        (context, url, error) =>
+                                                        Image.asset(
+                                                          AssetRes.imagePlaceholder,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                    const EdgeInsets.only(
+                                                        top: 4, right: 4),
+                                                    child: GestureDetector(
+                                                        onTap: () {
+                                                          favoritesController
+                                                              .onTapLikeUnlike(
+                                                              index);
+                                                        },
+                                                        child: SizedBox(
+                                                            height: (snapshot.data?['favourite']
+                                                            [index]
+                                                            [
+                                                            'isFav'] ==
+                                                                false)
+                                                                ? Get.height *
+                                                                0.025
+                                                                : Get.height *
+                                                                0.03,
+                                                            child: Image.asset(
+                                                                (snapshot.data?['favourite'][index]['isFav'] ==
+                                                                    false)
+                                                                    ? AssetRes
+                                                                    .LikeIcon
+                                                                    : AssetRes
+                                                                    .imageLike))),
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           ],

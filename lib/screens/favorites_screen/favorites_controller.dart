@@ -10,7 +10,6 @@ class FavoritesController extends GetxController {
 
   List myBoolList = [];
 
-  // RxBool selectLike = false.obs;
   RxList<bool> selectLike = <bool>[].obs;
 
   CollectionReference user = FirebaseFirestore.instance.collection('user');
@@ -25,6 +24,7 @@ class FavoritesController extends GetxController {
     AssetRes.wallpaperpre5,
     AssetRes.wallpaperpre6,
   ];
+
   @override
   void onInit() {
     // TODO: implement onInit
@@ -72,7 +72,6 @@ class FavoritesController extends GetxController {
         });
       });
     });
-    print(list);
 
     await category.doc(id).update({
       'image': list,

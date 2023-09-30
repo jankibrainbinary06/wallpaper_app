@@ -8,7 +8,6 @@ class ViewCategoryController extends GetxController {
 
   Future<void> onTapCatImage2(String docId, length) async {
     myBoolList = [];
-    print(docId);
     myBoolList = List.generate(length, (index) => false);
 
     var myFavList = [];
@@ -32,20 +31,15 @@ class ViewCategoryController extends GetxController {
         for (int i = 0; i < list.length; i++) {
           myCategoryList.add(list[i]['imageLink']);
         }
-        print(myCategoryList);
       });
 
       for (int i = 0; i < myCategoryList.length; i++) {
         for (int j = 0; j < myFavList.length; j++) {
           if (myCategoryList[i] == myFavList[j]) {
             myBoolList[i] = true;
-            print(myBoolList);
           } else {}
         }
       }
-      print(myBoolList);
-    } else {
-      print("hello");
-    }
+    } else {}
   }
 }

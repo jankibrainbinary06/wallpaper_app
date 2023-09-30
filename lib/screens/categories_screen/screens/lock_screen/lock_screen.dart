@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +18,7 @@ class LockScreen extends StatelessWidget {
         },
                 child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: Get.height,
               width: Get.width,
              child:    CachedNetworkImage(
@@ -46,11 +48,10 @@ class LockScreen extends StatelessWidget {
                     fontFamily: 'sfPro',
 
                   )),  SizedBox(height: Get.height * 0.03,),
-                  Text("10:27",style: TextStyle(
+                  const Text("10:27",style: TextStyle(
                     color: Colors.white,fontWeight: FontWeight.w500,
                     fontSize: 90,
                     fontFamily: 'sfPro',
-
                   )),
                   const Spacer(),
                   Row(
@@ -67,7 +68,7 @@ class LockScreen extends StatelessWidget {
                             shape: BoxShape.circle,
                             color: Colors.white.withOpacity(0.3),
                           ),
-                          child: Icon(Icons.flashlight_on_sharp),
+                          child: const Icon(Icons.flashlight_on_sharp),
                         ),
                       ),
                       const Spacer(),
@@ -83,7 +84,7 @@ class LockScreen extends StatelessWidget {
                             shape: BoxShape.circle,
                             color: Colors.white.withOpacity(0.3),
                           ),
-                          child: Icon(Icons.camera_alt),
+                          child: const Icon(Icons.camera_alt),
                         ),
                       ),
                     ],

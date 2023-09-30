@@ -6,8 +6,7 @@ import 'package:get/get.dart';
 import 'package:wallpaperapp/screens/dashboar_screen/dashboard_screen.dart';
 import 'package:wallpaperapp/services/pref_servies.dart';
 
-class SignUpController extends GetxController{
-
+class SignUpController extends GetxController {
   RxBool isSequer = true.obs;
   RxBool isConfirmSequer = true.obs;
   RxBool loader = false.obs;
@@ -22,7 +21,6 @@ class SignUpController extends GetxController{
 
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   CollectionReference user = FirebaseFirestore.instance.collection('user');
-
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -43,14 +41,12 @@ class SignUpController extends GetxController{
     } else {
       emailError.value = "";
     }
-
   }
-
-
 
   void setPassword(String value) {
     password.value = value.trim();
   }
+
   validatePassword() {
     if (password.value.isEmpty) {
       passwordErrorMessage.value = 'Password can not be empty';
@@ -60,6 +56,7 @@ class SignUpController extends GetxController{
       passwordErrorMessage.value = "";
     }
   }
+
   void setConfirmPassword(String value) {
     confirmPassword.value = value.trim();
   }
@@ -68,16 +65,15 @@ class SignUpController extends GetxController{
     if (confirmPassword.value.isEmpty) {
       confirmPasswordErrorMessage.value = 'Confirm Password can not be empty';
     } else if (confirmPassword.value.length < 8) {
-      confirmPasswordErrorMessage.value = 'Confirm Password be at least 8 characters';
-    }
-    else if(confirmPassword.value != password.value){
-
+      confirmPasswordErrorMessage.value =
+          'Confirm Password be at least 8 characters';
+    } else if (confirmPassword.value != password.value) {
       confirmPasswordErrorMessage.value = 'Please enter same password';
-    }
-    else {
+    } else {
       confirmPasswordErrorMessage.value = "";
     }
   }
+
   Future<void> signUp(String email, String password) async {
     try {
       loader.value = true;
@@ -86,32 +82,27 @@ class SignUpController extends GetxController{
         password: password,
       );
       loader.value = false;
-      Future.delayed(const Duration(seconds: 1),() async {
-
-        Get.offAll(() => DashBoardScreen());
-       await  userAddTOFirebase(email);
-      },);
-      // Get.snackbar("Yay!","User Sign Up SuccessFully", snackPosition: SnackPosition.TOP,backgroundColor: CupertinoColors.white);
+      Future.delayed(
+        const Duration(seconds: 1),
+        () async {
+          Get.offAll(() => DashBoardScreen());
+          await userAddTOFirebase(email);
+        },
+      );
     } catch (e) {
       loader.value = false;
-      print(e.toString());
-      Get.snackbar('Error', 'This account is already exits!', snackPosition: SnackPosition.TOP,backgroundColor: CupertinoColors.destructiveRed,colorText: CupertinoColors.white);
+
+      Get.snackbar('Error', 'This account is already exits!',
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: CupertinoColors.destructiveRed,
+          colorText: CupertinoColors.white);
     }
   }
-  Future<void>userAddTOFirebase(String email) async {
 
-
-    return user
-        .add({
-      'email':email,
-      'favourite':
- [
- ]
-    })
-        .then((value){
-          PrefService.setValue('docId', value.id);
-          PrefService.setValue('isUser',true);
-    })
-        .catchError((error) => print("Failed to add user: $error"));
+  Future<void> userAddTOFirebase(String email) async {
+    return user.add({'email': email, 'favourite': []}).then((value) {
+      PrefService.setValue('docId', value.id);
+      PrefService.setValue('isUser', true);
+    }).catchError((error) {});
   }
 }

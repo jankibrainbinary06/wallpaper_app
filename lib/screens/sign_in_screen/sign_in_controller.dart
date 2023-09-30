@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_function_literals_in_foreach_calls
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,8 +8,6 @@ import 'package:wallpaperapp/screens/dashboar_screen/dashboard_screen.dart';
 import 'package:wallpaperapp/services/pref_servies.dart';
 
 class SignInController extends GetxController {
-
-
   RxBool isSequer = true.obs;
   RxBool loader = false.obs;
 
@@ -39,6 +39,7 @@ class SignInController extends GetxController {
       emailError.value = "";
     }
   }
+
   void setPassword(String value) {
     password.value = value.trim();
   }
@@ -64,20 +65,21 @@ class SignInController extends GetxController {
       Future.delayed(
         const Duration(seconds: 1),
         () {
-            Get.offAll(() => DashBoardScreen());
-
+          Get.offAll(() => DashBoardScreen());
           getUserDocId(email);
           PrefService.setValue('isUser', true);
         },
       );
-      // Get.snackbar('Yay!', "You have Login",
-      //     snackPosition: SnackPosition.TOP,backgroundColor: CupertinoColors.white);
     } catch (e) {
       loader.value = false;
-      print(e.toString());
-      Get.snackbar('Error', 'Invalid username/password!', snackPosition: SnackPosition.TOP,backgroundColor: CupertinoColors.destructiveRed,colorText: CupertinoColors.white);
+
+      Get.snackbar('Error', 'Invalid username/password!',
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: CupertinoColors.destructiveRed,
+          colorText: CupertinoColors.white);
     }
   }
+
   getUserDocId(String email) async {
     await user.get().then((value) {
       value.docs.forEach((element) {

@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,7 +12,8 @@ import 'package:wallpaperapp/utils/strings.dart';
 class ForgotPasswordScreen extends StatelessWidget {
   ForgotPasswordScreen({super.key});
 
-  ForgotPasswordScreenController forgotPasswordScreenController = Get.put(ForgotPasswordScreenController());
+  ForgotPasswordScreenController forgotPasswordScreenController =
+      Get.put(ForgotPasswordScreenController());
 
   @override
   Widget build(BuildContext context) {
@@ -62,64 +63,82 @@ class ForgotPasswordScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            Padding(
-              padding:  EdgeInsets.only(left: Get.width * 0.05,top: Get.height * 0.04,right: Get.width * 0.05),
-              child: Column( crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                Text(StringRes.ResetYourPassword,style: TextStyle(fontSize: Get.width * 0.04,color: Colors.white,fontFamily: "regularfont"),),
-                SizedBox(
-                  height: Get.height * 0.05,
-                ),
-                TextFieldCommonWidget2(
-                  controller: forgotPasswordScreenController.emailController,
-                  onChanged:(value) =>  forgotPasswordScreenController.setEmail(value),
-                  PrefixIcon: AssetRes.postIcon,
-                  hintText: "enter email ID",
-                  isShowViciblity: false,
-                ),
-                Obx(() =>    forgotPasswordScreenController.emailError.value.isEmpty
-                    ? const SizedBox()
-                    : Text(forgotPasswordScreenController.emailError.value, style: TextStyle(color: const Color(0xFFA2000F),fontSize: Get.height * 0.02)),),
-                SizedBox(
-                  height: Get.height * 0.04,
-                ),
-
-                Center(
-                  child: GestureDetector(
-                    onTap: () async {
-
-                     await forgotPasswordScreenController.validateEmail();
-                      if(forgotPasswordScreenController.emailError.isEmpty)
-                        {
-                          forgotPasswordScreenController.resetPassword(forgotPasswordScreenController.emailController.text);
-                          // Get.to(ForgotPasswordOtpScreen());
-                        }
-
-                    },
-                    child: Container(
-                      height: Get.height * 0.09,
-                      width: Get.width * 0.6,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: ColorRes.splashButton,
-                          borderRadius: BorderRadius.circular(40)),
-                      child: Text(
-                        StringRes.Continue,
-                        style: TextStyle(
-                          //  fontWeight: FontWeight.w600,
-                            fontSize: Get.width * 0.06,
-                            color: Colors.black,
-                            fontFamily: "boldfont"),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: Get.width * 0.05,
+                    top: Get.height * 0.04,
+                    right: Get.width * 0.05),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      StringRes.ResetYourPassword,
+                      style: TextStyle(
+                          fontSize: Get.width * 0.04,
+                          color: Colors.white,
+                          fontFamily: "regularfont"),
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.05,
+                    ),
+                    TextFieldCommonWidget2(
+                      controller:
+                          forgotPasswordScreenController.emailController,
+                      onChanged: (value) =>
+                          forgotPasswordScreenController.setEmail(value),
+                      PrefixIcon: AssetRes.postIcon,
+                      hintText: "enter email ID",
+                      isShowViciblity: false,
+                    ),
+                    Obx(
+                      () => forgotPasswordScreenController
+                              .emailError.value.isEmpty
+                          ? const SizedBox()
+                          : Text(
+                              forgotPasswordScreenController.emailError.value,
+                              style: TextStyle(
+                                  color: const Color(0xFFA2000F),
+                                  fontSize: Get.height * 0.02)),
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.04,
+                    ),
+                    Center(
+                      child: GestureDetector(
+                        onTap: () async {
+                          await forgotPasswordScreenController.validateEmail();
+                          if (forgotPasswordScreenController
+                              .emailError.isEmpty) {
+                            forgotPasswordScreenController.resetPassword(
+                                forgotPasswordScreenController
+                                    .emailController.text);
+                            // Get.to(ForgotPasswordOtpScreen());
+                          }
+                        },
+                        child: Container(
+                          height: Get.height * 0.09,
+                          width: Get.width * 0.6,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: ColorRes.splashButton,
+                              borderRadius: BorderRadius.circular(40)),
+                          child: Text(
+                            StringRes.Continue,
+                            style: TextStyle(
+                                //  fontWeight: FontWeight.w600,
+                                fontSize: Get.width * 0.06,
+                                color: Colors.black,
+                                fontFamily: "boldfont"),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                    SizedBox(
+                      height: Get.height * 0.04,
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: Get.height * 0.04,
-                ),
-
-              ],),
-            )
+              )
             ],
           ),
         ),
@@ -180,7 +199,6 @@ class TextFieldCommonWidget2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
         Container(
@@ -190,7 +208,7 @@ class TextFieldCommonWidget2 extends StatelessWidget {
           decoration: BoxDecoration(
               color: ColorRes.white.withOpacity(0.10),
               borderRadius: BorderRadius.circular(10)),
-        //  margin: EdgeInsets.only(left: width * 0.035, right: width * 0.01),
+          //  margin: EdgeInsets.only(left: width * 0.035, right: width * 0.01),
           child: TextField(
             obscureText: obscureText ?? false,
             readOnly: readOnly ?? false,
@@ -210,22 +228,24 @@ class TextFieldCommonWidget2 extends StatelessWidget {
                     borderSide: BorderSide(color: Colors.transparent)),
                 hintText: hintText,
                 hintStyle: TextStyle(
-                    color: const Color(0xFFFFFFFF).withOpacity(0.55), height:1, fontFamily: ""),
+                    color: const Color(0xFFFFFFFF).withOpacity(0.55),
+                    height: 1,
+                    fontFamily: ""),
                 contentPadding: EdgeInsets.symmetric(
                     vertical: Get.height * 0.015, horizontal: Get.width * 0.03),
                 suffixIcon: isShowViciblity == true
                     ? GestureDetector(
-                  onTap: onTapIcon,
-                      child: (obscureText==true)?
-                      const Icon(
-                        Icons.remove_red_eye_outlined,
-                        color: Colors.grey,
-                      ) :
-                      const Icon(
-                        Icons.visibility_off_outlined,
-                        color: Colors.grey,
-                      ),
-                    )
+                        onTap: onTapIcon,
+                        child: (obscureText == true)
+                            ? const Icon(
+                                Icons.remove_red_eye_outlined,
+                                color: Colors.grey,
+                              )
+                            : const Icon(
+                                Icons.visibility_off_outlined,
+                                color: Colors.grey,
+                              ),
+                      )
                     : const SizedBox(),
                 prefixIcon: Image.asset(
                   PrefixIcon ?? "",
@@ -233,7 +253,7 @@ class TextFieldCommonWidget2 extends StatelessWidget {
                 )),
           ),
         ),
-     //   SizedBox(height: height * 0.015),
+        //   SizedBox(height: height * 0.015),
       ],
     );
   }
