@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable, non_constant_identifier_names
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -33,7 +34,7 @@ class SignUpScreen extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        height: Get.height * 0.5,
+                        height:   MediaQuery.of(context).size.height * 0.5,
                         // width: Get.width * 0.8,
                         decoration: const BoxDecoration(
                             image: DecorationImage(
@@ -48,7 +49,7 @@ class SignUpScreen extends StatelessWidget {
                             Text(
                               StringRes.SignUn,
                               style: TextStyle(
-                                  fontSize: Get.width * 0.09,
+                                  fontSize: kIsWeb?27: Get.width * 0.09,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: "boldfont"),
@@ -58,7 +59,7 @@ class SignUpScreen extends StatelessWidget {
                             ),
                             Container(
                               height: 3,
-                              width: Get.width * 0.22,
+                              width:  kIsWeb?120:Get.width * 0.22,
                               decoration: BoxDecoration(
                                   color: ColorRes.splashButton,
                                   borderRadius: BorderRadius.circular(2)),
@@ -159,8 +160,8 @@ class SignUpScreen extends StatelessWidget {
                               }
                             },
                             child: Container(
-                              height: Get.height * 0.09,
-                              width: Get.width * 0.6,
+                              height: kIsWeb?65:Get.height * 0.09,
+                              width: kIsWeb?240:Get.width * 0.6,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                   color: ColorRes.splashButton,
@@ -169,7 +170,7 @@ class SignUpScreen extends StatelessWidget {
                                 StringRes.Signup,
                                 style: TextStyle(
                                   //  fontWeight: FontWeight.w600,
-                                    fontSize: Get.width * 0.07,
+                                    fontSize: kIsWeb?24:Get.width * 0.07,
                                     color: Colors.black,
                                     fontFamily: "boldfont"),
                               ),
@@ -180,7 +181,7 @@ class SignUpScreen extends StatelessWidget {
                           height: Get.height * 0.04,
                         ),
                         Padding(
-                          padding:  EdgeInsets.only(right: Get.width * 0.08),
+                          padding:  EdgeInsets.only(right:  kIsWeb?20:Get.width * 0.08),
                           child: Row(mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Text("Already have an account?",style:

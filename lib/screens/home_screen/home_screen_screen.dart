@@ -3,8 +3,10 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:wallpaperapp/screens/dashboar_screen/dashboard_controller.dart';
 import 'package:wallpaperapp/screens/favorites_screen/favorites_screen.dart';
 import 'package:wallpaperapp/screens/forgot_screen/forgot_screen.dart';
@@ -28,294 +30,299 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Get.forceAppUpdate();
     return Scaffold(
       drawerEnableOpenDragGesture: false,
       key: homeController.scaffoldKey,
       backgroundColor: Colors.black,
-      body: GestureDetector(
-        onTap: () {
-          if (homeController.scaffoldKey.currentState!.hasDrawer) {
-            debugPrint("------------+++++++:  ");
-          }
-          myController.onOutsideTap();
-          dashBoardController.isShowbuttomBar.value = false;
-          Get.reload();
-          Get.forceAppUpdate();
-          debugPrint(
-              "------------+++++++:  ${dashBoardController.isShowbuttomBar.value}");
-        },
-        child: SafeArea(
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  Container(
-                    height: Get.height * 0.34,
-                    // width: Get.width * 0.8,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage(AssetRes.backgroundImage))),
-                  ),
-                  GetBuilder<HomeController>(
-                    id: 'boolList',
-                    builder: (controller) {
-                      return StreamBuilder(
-                        stream: FirebaseFirestore.instance
-                            .collection('category')
-                            .snapshots(),
-                        builder:
-                            (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                          homeController.allCategory.clear();
-                          homeController.allCategory
-                              .add({"name": "All", "id": "1"});
-                          snapshot.data?.docs.forEach((element) {
-                            homeController.allCategory.add({
-                              "name": element['name'],
-                              "id": element.id,
+      body: ResponsiveBuilder(builder: (context, sizingInformation) {
+        return GestureDetector(
+          onTap: () {
+            if (homeController.scaffoldKey.currentState!.hasDrawer) {
+              debugPrint("------------+++++++:  ");
+            }
+            myController.onOutsideTap();
+            dashBoardController.isShowbuttomBar.value = false;
+            Get.reload();
+            Get.forceAppUpdate();
+            debugPrint(
+                "------------+++++++:  ${dashBoardController.isShowbuttomBar.value}");
+          },
+          child: SafeArea(
+            child: Stack(
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.34,
+                      // width: Get.width * 0.8,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage(AssetRes.backgroundImage))),
+                    ),
+                    GetBuilder<HomeController>(
+                      id: 'boolList',
+                      builder: (controller) {
+                        return StreamBuilder(
+                          stream: FirebaseFirestore.instance
+                              .collection('category')
+                              .snapshots(),
+                          builder:
+                              (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                            homeController.allCategory.clear();
+                            homeController.allCategory
+                                .add({"name": "All", "id": "1"});
+                            snapshot.data?.docs.forEach((element) {
+                              homeController.allCategory.add({
+                                "name": element['name'],
+                                "id": element.id,
+                              });
                             });
-                          });
-                          if (homeController.aBoolList.length !=
-                              (homeController.allCategory.length)) {
-                            homeController.boolGenerate(
-                                homeController.allCategory.length);
-                            homeController.onTapCategory(
-                                0, homeController.allCategory.length, "1");
-                          } else {}
-                          return Padding(
-                            padding: const EdgeInsets.only(left: 25, right: 25),
-                            child: SizedBox(
-                              height: Get.height * 0.07,
-                              child: ListView.separated(
-                                itemCount: homeController.allCategory.length,
-                                separatorBuilder: (context, index) {
-                                  return const SizedBox(
-                                    width: 10,
-                                  );
-                                },
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, index) {
-                                  return GestureDetector(
-                                    onTap: () {
-                                      homeController.onTapCategory(
-                                          index,
-                                          homeController.allCategory.length,
+                            if (homeController.aBoolList.length !=
+                                (homeController.allCategory.length)) {
+                              homeController.boolGenerate(
+                                  homeController.allCategory.length);
+                              homeController.onTapCategory(
+                                  0, homeController.allCategory.length, "1");
+                            } else {}
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 25, right: 25),
+                              child: SizedBox(
+                                //   width: kIsWeb ? 120:Get.width * 0.06,
+                                height: Get.height * 0.07,
+                                child: ListView.separated(
+                                  itemCount: homeController.allCategory.length,
+                                  separatorBuilder: (context, index) {
+                                    return const SizedBox(
+                                      width: 10,
+                                    );
+                                  },
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context, index) {
+                                    return GestureDetector(
+                                      onTap: () {
+                                        homeController.onTapCategory(
+                                            index,
+                                            homeController.allCategory.length,
+                                            homeController.allCategory[index]
+                                            ['id']);
+                                        homeController.update(['boolList']);
+                                        homeController.update(['data']);
+                                      },
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        height: Get.height * 0.07,
+                                        width: kIsWeb? 220:Get.width * 0.3,
+                                        decoration: BoxDecoration(
+                                            color: homeController.aBoolList[index]
+                                                ? ColorRes.splashButton
+                                                : Colors.transparent,
+                                            borderRadius:
+                                            BorderRadius.circular(17)),
+                                        child: Text(
                                           homeController.allCategory[index]
-                                              ['id']);
-                                      homeController.update(['boolList']);
-                                      homeController.update(['data']);
-                                    },
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      height: Get.height * 0.07,
-                                      width: Get.width * 0.3,
-                                      decoration: BoxDecoration(
-                                          color: homeController.aBoolList[index]
-                                              ? ColorRes.splashButton
-                                              : Colors.transparent,
-                                          borderRadius:
-                                              BorderRadius.circular(17)),
-                                      child: Text(
-                                        homeController.allCategory[index]
-                                            ['name'],
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: Get.width * 0.044,
-                                            color:
-                                                homeController.aBoolList[index]
-                                                    ? Colors.black
-                                                    : Colors.white,
-                                            fontFamily: "regularfont"),
+                                          ['name'],
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: kIsWeb ?15: Get.width * 0.044,
+                                              color:
+                                              homeController.aBoolList[index]
+                                                  ? Colors.black
+                                                  : Colors.white,
+                                              fontFamily: "regularfont"),
+                                        ),
                                       ),
-                                    ),
-                                  );
+                                    );
+                                  },
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.04,
+                    ),
+                    GetBuilder<HomeController>(
+                      id: 'data',
+                      builder: (controller) {
+                        return Expanded(
+                          child: SingleChildScrollView(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 20),
+                              child: GridView.builder(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                scrollDirection: Axis.vertical,
+                                itemCount: homeController.allImage.length + 3,
+                                gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: sizingInformation.isDesktop?6: sizingInformation.isTablet?4:3,
+                                  mainAxisSpacing: 1,
+                                  crossAxisSpacing:kIsWeb?30: 15,
+                                  childAspectRatio: kIsWeb? 1:0.7,
+                                ),
+                                itemBuilder: (context, index) {
+                                  if ((index == homeController.allImage.length + 3 - 1) ||
+                                      (index ==
+                                          homeController.allImage.length +
+                                              3 -
+                                              2) ||
+                                      (index ==
+                                          homeController.allImage.length +
+                                              3 -
+                                              3)) {
+                                    return SizedBox(
+                                      height: Get.height * 0.19,
+                                      width: Get.width * 0.86,
+                                    );
+                                  } else {
+                                    return GestureDetector(
+                                      onTap: () async {
+                                        if (homeController.aBoolList[0] == true) {
+                                          await homeController.onTapImage2('1',
+                                              homeController.allImage.length);
+                                        } else {
+                                          await homeController.onTapImage2(
+                                              homeController.allImage[index]
+                                              ['id'],
+                                              homeController.allImage.length);
+                                        }
+                                        Get.to(
+                                                () => OnlyViewWallpaperScreen(
+                                              image: homeController
+                                                  .allImage[index]
+                                              ['imageLink'],
+                                              docId: homeController
+                                                  .allImage[index]['id'],
+                                              imageList:
+                                              homeController.allImage,
+                                              favBoolList:
+                                              homeController.myBoolList,
+                                            ),
+                                            arguments: index);
+                                      },
+                                      child: Stack(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                            BorderRadius.circular(10),
+                                            child: Container(
+                                              height: kIsWeb ?150:Get.height * 0.19,
+                                              width: Get.width * 0.86,
+                                              alignment: Alignment.bottomCenter,
+                                              clipBehavior: Clip.hardEdge,
+                                              margin: const EdgeInsets.only(
+                                                  bottom: 17),
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color:
+                                                    Colors.white.withOpacity(
+                                                      0.8,
+                                                    ),
+                                                    width: 0),
+                                                borderRadius:
+                                                BorderRadius.circular(10),
+                                              ),
+                                              child: CachedNetworkImage(
+                                              height: kIsWeb ?150:Get.height * 0.19,
+                                                width: Get.width * 0.86,
+                                                imageUrl: homeController
+                                                    .allImage[index]['imageLink'],
+                                                fit: BoxFit.fill,
+                                                placeholder: (context, url) =>
+                                                    Image.asset(
+                                                      AssetRes.imagePlaceholder,
+                                                      fit: BoxFit.fill,
+                                                    ),
+                                                errorWidget:
+                                                    (context, url, error) =>
+                                                    Image.asset(
+                                                      AssetRes.imagePlaceholder,
+                                                      fit: BoxFit.fill,
+                                                    ),
+                                              ),
+                                            ),
+                                          ),
+                                          ClipRRect(
+                                            borderRadius:
+                                            BorderRadius.circular(10),
+                                            child: Container(
+                                              // height: Get.height * 0.19,
+                                              // width: Get.width * 0.86,
+                                              alignment: Alignment.bottomCenter,
+                                              clipBehavior: Clip.hardEdge,
+                                              margin: const EdgeInsets.only(
+                                                  bottom: 17),
+                                              decoration: BoxDecoration(
+                                                // border: Border.all(
+                                                //     color:
+                                                //     Colors.white.withOpacity(
+                                                //       0.8,
+                                                //     ),
+                                                //     width: 0.5),
+                                                borderRadius:
+                                                BorderRadius.circular(10),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  }
                                 },
                               ),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.04,
-                  ),
-                  GetBuilder<HomeController>(
-                    id: 'data',
-                    builder: (controller) {
-                      return Expanded(
-                        child: SingleChildScrollView(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: GridView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              scrollDirection: Axis.vertical,
-                              itemCount: homeController.allImage.length + 3,
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3,
-                                mainAxisSpacing: 1,
-                                crossAxisSpacing: 15,
-                                childAspectRatio: 0.7,
-                              ),
-                              itemBuilder: (context, index) {
-                                if ((index == homeController.allImage.length + 3 - 1) ||
-                                    (index ==
-                                        homeController.allImage.length +
-                                            3 -
-                                            2) ||
-                                    (index ==
-                                        homeController.allImage.length +
-                                            3 -
-                                            3)) {
-                                  return SizedBox(
-                                    height: Get.height * 0.19,
-                                    width: Get.width * 0.86,
-                                  );
-                                } else {
-                                  return GestureDetector(
-                                    onTap: () async {
-                                      if (homeController.aBoolList[0] == true) {
-                                        await homeController.onTapImage2('1',
-                                            homeController.allImage.length);
-                                      } else {
-                                        await homeController.onTapImage2(
-                                            homeController.allImage[index]
-                                                ['id'],
-                                            homeController.allImage.length);
-                                      }
-                                      Get.to(
-                                          () => OnlyViewWallpaperScreen(
-                                                image: homeController
-                                                        .allImage[index]
-                                                    ['imageLink'],
-                                                docId: homeController
-                                                    .allImage[index]['id'],
-                                                imageList:
-                                                    homeController.allImage,
-                                                favBoolList:
-                                                    homeController.myBoolList,
-                                              ),
-                                          arguments: index);
-                                    },
-                                    child: Stack(
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          child: Container(
-                                            height: Get.height * 0.19,
-                                            width: Get.width * 0.86,
-                                            alignment: Alignment.bottomCenter,
-                                            clipBehavior: Clip.hardEdge,
-                                            margin: const EdgeInsets.only(
-                                                bottom: 17),
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  color:
-                                                      Colors.white.withOpacity(
-                                                    0.8,
-                                                  ),
-                                                  width: 0),
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                            child: CachedNetworkImage(
-                                              height: Get.height * 0.19,
-                                              width: Get.width * 0.86,
-                                              imageUrl: homeController
-                                                  .allImage[index]['imageLink'],
-                                              fit: BoxFit.fill,
-                                              placeholder: (context, url) =>
-                                                  Image.asset(
-                                                AssetRes.imagePlaceholder,
-                                                fit: BoxFit.fill,
-                                              ),
-                                              errorWidget:
-                                                  (context, url, error) =>
-                                                      Image.asset(
-                                                AssetRes.imagePlaceholder,
-                                                fit: BoxFit.fill,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          child: Container(
-                                            height: Get.height * 0.19,
-                                            width: Get.width * 0.86,
-                                            alignment: Alignment.bottomCenter,
-                                            clipBehavior: Clip.hardEdge,
-                                            margin: const EdgeInsets.only(
-                                                bottom: 17),
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  color:
-                                                      Colors.white.withOpacity(
-                                                    0.8,
-                                                  ),
-                                                  width: 0.5),
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                }
-                              },
                             ),
                           ),
-                        ),
-                      );
-                    },
-                  )
+                        );
+                      },
+                    )
 
-                  // SizedBox(height: Get.height * 0.04,),
-                ],
-              ),
-              // SizedBox(height: Get.height * 0.07,),
-              Positioned(
-                top: 60,
-                left: 14,
-                right: 40,
-                child: SizedBox(
-                  height: Get.height * 0.140,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      GestureDetector(
-                          onTap: () {
-                            dashBoardController.isShowbuttomBar.value = true;
-                            homeController.scaffoldKey.currentState
-                                ?.openDrawer();
-                          },
-                          child: SizedBox(
-                            height: Get.height * 0.07,
-                            width: Get.width * 0.140,
-                            child: Image.asset(AssetRes.DroverIcon),
-                          )),
-                      Text(
-                        StringRes.ExploreTheBest,
-                        style: TextStyle(
-                            fontSize: Get.width * 0.08,
-                            color: Colors.white,
-                            fontFamily: "regularfont"),
-                      ),
-                      //   SizedBox(height: Get.height * 0.02,),
-                    ],
+                    // SizedBox(height: Get.height * 0.04,),
+                  ],
+                ),
+                // SizedBox(height: Get.height * 0.07,),
+                Positioned(
+                  top: 60,
+                  left: 14,
+                  right: 40,
+                  child: SizedBox(
+                    height: Get.height * 0.140,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        GestureDetector(
+                            onTap: () {
+                              dashBoardController.isShowbuttomBar.value = true;
+                              homeController.scaffoldKey.currentState
+                                  ?.openDrawer();
+                            },
+                            child: SizedBox(
+                              height: Get.height * 0.07,
+                              width: Get.width * 0.140,
+                              child: Image.asset(AssetRes.DroverIcon),
+                            )),
+                        Text(
+                          StringRes.ExploreTheBest,
+                          style: TextStyle(
+                              fontSize:  kIsWeb ?40:Get.width * 0.08,
+                              color: Colors.white,
+                              fontFamily: "regularfont"),
+                        ),
+                        //   SizedBox(height: Get.height * 0.02,),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ),
+        );
+      },),
       drawer: Drawer(
         // clipBehavior: Clip.none,
 
@@ -368,7 +375,7 @@ class HomeScreen extends StatelessWidget {
                   title: Text(
                     homeController.drawerImageNameList[index],
                     style: TextStyle(
-                        fontSize: Get.width * 0.042,
+                        fontSize: kIsWeb?15:Get.width * 0.042,
                         color: Colors.white,
                         fontFamily: "regularfont"),
                   ),
@@ -402,13 +409,13 @@ class HomeScreen extends StatelessWidget {
                     }
                   },
                   child: Container(
-                    height: Get.height * 0.105,
-                    width: Get.width * 0.4,
+                    height: 65,
+                    width: 144,
                     alignment: Alignment.center,
                     margin: EdgeInsets.only(
-                        left: Get.width * 0.1,
-                        right: Get.width * 0.1,
-                        top: Get.height * 0.05),
+                        left: kIsWeb?20:Get.width * 0.1,
+                        right:kIsWeb?20: Get.width * 0.1,
+                        top: kIsWeb?20:Get.height * 0.05),
                     decoration: BoxDecoration(
                       color: ColorRes.splashButton,
                       borderRadius: BorderRadius.circular(15),
@@ -432,7 +439,7 @@ class HomeScreen extends StatelessWidget {
                                 : "Login",
                             style: TextStyle(
                                 fontWeight: FontWeight.w900,
-                                fontSize: Get.width * 0.05,
+                                fontSize:kIsWeb?18: Get.width * 0.05,
                                 color: Colors.black,
                                 fontFamily: "regularfont"),
                           ),

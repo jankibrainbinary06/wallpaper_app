@@ -6,7 +6,7 @@ import 'package:wallpaperapp/utils/assets_res.dart';
 Widget bottomNavigationBar(BuildContext context) {
   DashBoardController dashBoardController = Get.put(DashBoardController());
   return Container(
-    height: Get.height * 0.115,
+    height: MediaQuery.of(context).size.height * 0.115,
     width: Get.width * 0.8,
     decoration: BoxDecoration(
         image: const DecorationImage(

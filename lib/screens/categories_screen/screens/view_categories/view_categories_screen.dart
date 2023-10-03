@@ -3,6 +3,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:wallpaperapp/screens/categories_screen/screens/view_categories/view_categories_controller.dart';
 import 'package:wallpaperapp/screens/only_view_wallpaper_screen/only_view_wallpaper_screen.dart';
 
@@ -41,52 +42,54 @@ class ViewCategoryScreen extends StatelessWidget {
                 color: Colors.white,
               )),
         ),
-        body: Column(
-          children: [
-            Expanded(
-              child: GridView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: images?.length ?? 0,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 1,
-                  crossAxisSpacing: 1,
-                  childAspectRatio: 0.7,
+        body: ResponsiveBuilder(builder: (context, sizingInformation) {
+          return Column(
+            children: [
+              Expanded(
+                child: GridView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: images?.length ?? 0,
+                  gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: sizingInformation.isDesktop ?6:sizingInformation.isTablet ?4:2,
+                    mainAxisSpacing: 1,
+                    crossAxisSpacing: 1,
+                    childAspectRatio: 0.7,
+                  ),
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () async {
+                        await viewCategoryController.onTapCatImage2(
+                            docId!, images!.length);
+                        Get.to(
+                                () => OnlyViewWallpaperScreen(
+                              image: images![index]['imageLink'],
+                              docId: docId!,
+                              imageList: images!,
+                              favBoolList: viewCategoryController.myBoolList,
+                            ),
+                            arguments: index);
+                      },
+                      child: CachedNetworkImage(
+                        height: Get.height * 0.184,
+                        width: Get.width * 0.86,
+                        imageUrl: images![index]['imageLink'],
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) => Image.asset(
+                          AssetRes.imagePlaceholder,
+                          fit: BoxFit.cover,
+                        ),
+                        errorWidget: (context, url, error) => Image.asset(
+                          AssetRes.imagePlaceholder,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
                 ),
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () async {
-                      await viewCategoryController.onTapCatImage2(
-                          docId!, images!.length);
-                      Get.to(
-                          () => OnlyViewWallpaperScreen(
-                                image: images![index]['imageLink'],
-                                docId: docId!,
-                                imageList: images!,
-                                favBoolList: viewCategoryController.myBoolList,
-                              ),
-                          arguments: index);
-                    },
-                    child: CachedNetworkImage(
-                      height: Get.height * 0.184,
-                      width: Get.width * 0.86,
-                      imageUrl: images![index]['imageLink'],
-                      fit: BoxFit.cover,
-                      placeholder: (context, url) => Image.asset(
-                        AssetRes.imagePlaceholder,
-                        fit: BoxFit.cover,
-                      ),
-                      errorWidget: (context, url, error) => Image.asset(
-                        AssetRes.imagePlaceholder,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  );
-                },
               ),
-            ),
-          ],
-        ),
+            ],
+          );
+        },),
       ),
     );
   }

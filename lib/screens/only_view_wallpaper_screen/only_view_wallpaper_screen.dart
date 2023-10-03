@@ -6,6 +6,7 @@ import 'dart:typed_data';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -55,7 +56,7 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                     return Stack(
                       children: [
                         SizedBox(
-                          height: Get.height,
+                          height: MediaQuery.of(context).size.height,
                           width: Get.width,
                           child: CachedNetworkImage(
                             height: Get.height * 0.184,
@@ -73,7 +74,7 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(Get.width * 0.08),
+                          padding: EdgeInsets.all( kIsWeb?18:Get.width * 0.08),
                           child: Column(
                             children: [
                               Row(

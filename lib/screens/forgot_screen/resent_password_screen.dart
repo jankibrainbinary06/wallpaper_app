@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable, non_constant_identifier_names
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -28,7 +29,7 @@ class ResentPasswordScreen extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: Get.height * 0.53,
+                    height:MediaQuery.of(context).size.height * 0.53,
                     // width: Get.width * 0.8,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
@@ -44,7 +45,7 @@ class ResentPasswordScreen extends StatelessWidget {
                         Text(
                           StringRes.ResetPassword,
                           style: TextStyle(
-                              fontSize: Get.width * 0.08,
+                              fontSize: kIsWeb?27:Get.width * 0.08,
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
                               fontFamily: "boldfont"),
@@ -54,7 +55,7 @@ class ResentPasswordScreen extends StatelessWidget {
                         ),
                         Container(
                           height: 3,
-                          width: Get.width * 0.55,
+                          width:  kIsWeb?120:Get.width * 0.55,
                           decoration: BoxDecoration(
                               color: ColorRes.splashButton,
                               borderRadius: BorderRadius.circular(2)),
@@ -163,8 +164,8 @@ class ResentPasswordScreen extends StatelessWidget {
                           }
                         },
                         child: Container(
-                          height: Get.height * 0.09,
-                          width: Get.width * 0.6,
+                          height: kIsWeb?65: Get.height * 0.09,
+                          width:  kIsWeb?240:Get.width * 0.6,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               color: ColorRes.splashButton,
@@ -173,7 +174,7 @@ class ResentPasswordScreen extends StatelessWidget {
                             StringRes.Continue,
                             style: TextStyle(
                                 //  fontWeight: FontWeight.w600,
-                                fontSize: Get.width * 0.06,
+                                fontSize: kIsWeb?24: Get.width * 0.06,
                                 color: Colors.black,
                                 fontFamily: "boldfont"),
                           ),

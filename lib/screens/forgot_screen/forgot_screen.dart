@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable, non_constant_identifier_names
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -43,7 +44,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                         Text(
                           StringRes.ForgotPassword,
                           style: TextStyle(
-                              fontSize: Get.width * 0.08,
+                              fontSize: kIsWeb?27: Get.width * 0.08,
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
                               fontFamily: "boldfont"),
@@ -53,7 +54,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                         ),
                         Container(
                           height: 3,
-                          width: Get.width * 0.55,
+                          width:  kIsWeb?120:Get.width * 0.55,
                           decoration: BoxDecoration(
                               color: ColorRes.splashButton,
                               borderRadius: BorderRadius.circular(2)),
@@ -74,7 +75,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     Text(
                       StringRes.ResetYourPassword,
                       style: TextStyle(
-                          fontSize: Get.width * 0.04,
+                          fontSize:  kIsWeb?17:Get.width * 0.04,
                           color: Colors.white,
                           fontFamily: "regularfont"),
                     ),
@@ -116,8 +117,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                           }
                         },
                         child: Container(
-                          height: Get.height * 0.09,
-                          width: Get.width * 0.6,
+                          height: kIsWeb?65: Get.height * 0.09,
+                          width:  kIsWeb?240:Get.width * 0.6,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               color: ColorRes.splashButton,
@@ -126,7 +127,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                             StringRes.Continue,
                             style: TextStyle(
                                 //  fontWeight: FontWeight.w600,
-                                fontSize: Get.width * 0.06,
+                                fontSize: kIsWeb?24: Get.width * 0.06,
                                 color: Colors.black,
                                 fontFamily: "boldfont"),
                           ),
@@ -204,7 +205,7 @@ class TextFieldCommonWidget2 extends StatelessWidget {
         Container(
           alignment: Alignment.center,
           height: Get.height * 0.09,
-          width: Get.width,
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               color: ColorRes.white.withOpacity(0.10),
               borderRadius: BorderRadius.circular(10)),

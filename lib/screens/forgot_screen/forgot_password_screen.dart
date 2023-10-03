@@ -1,5 +1,6 @@
 
 // ignore_for_file: must_be_immutable, non_constant_identifier_names
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -28,7 +29,7 @@ class ForgotPasswordOtpScreen extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: Get.height * 0.53,
+                    height:MediaQuery.of(context).size.height * 0.53,
                     // width: Get.width * 0.8,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
@@ -38,13 +39,13 @@ class ForgotPasswordOtpScreen extends StatelessWidget {
                   Positioned(
                     //top: Get.height * 0.42,
                     bottom: 0,
-                    left: Get.width * 0.04,
+                    left: kIsWeb?18: Get.width * 0.04,
                     child: Column(
                       children: [
                         Text(
                           StringRes.ForgotPassword,
                           style: TextStyle(
-                              fontSize: Get.width * 0.08,
+                              fontSize:  kIsWeb?27:Get.width * 0.08,
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
                               fontFamily: "boldfont"),
@@ -54,7 +55,7 @@ class ForgotPasswordOtpScreen extends StatelessWidget {
                         ),
                         Container(
                           height: 3,
-                          width: Get.width * 0.55,
+                          width:  kIsWeb?120:Get.width * 0.55,
                           decoration: BoxDecoration(
                               color: ColorRes.splashButton,
                               borderRadius: BorderRadius.circular(2)),
@@ -65,10 +66,13 @@ class ForgotPasswordOtpScreen extends StatelessWidget {
                 ],
               ),
             Padding(
-              padding:  EdgeInsets.only(left: Get.width * 0.05,top: Get.height * 0.03,right: Get.width * 0.05),
+              padding:  EdgeInsets.only(
+                  left:  kIsWeb?18:Get.width * 0.05,
+                  top:  kIsWeb?18:Get.height * 0.03,
+                  right:  kIsWeb?18:Get.width * 0.05),
               child: Column( crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                Text(StringRes.TypeTheVerificationCode,style: TextStyle(fontSize: Get.width * 0.04,color: Colors.white,fontFamily: "regularfont"),),
+                Text(StringRes.TypeTheVerificationCode,style: TextStyle(fontSize:  kIsWeb?17:Get.width * 0.04,color: Colors.white,fontFamily: "regularfont"),),
                 SizedBox(
                   height: Get.height * 0.05,
                 ),
@@ -97,7 +101,7 @@ class ForgotPasswordOtpScreen extends StatelessWidget {
                 SizedBox(
                   height: Get.height * 0.04,
                 ),
-                  Center(child: Text("Didn’t recive code?",style: TextStyle(fontSize: Get.width * 0.04,color: Colors.white,fontFamily: "regularfont"),)),
+                  Center(child: Text("Didn’t recive code?",style: TextStyle(fontSize: kIsWeb?18: Get.width * 0.04,color: Colors.white,fontFamily: "regularfont"),)),
                   SizedBox(
                     height: Get.height * 0.02,
                   ),
