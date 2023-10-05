@@ -31,12 +31,7 @@ class ForgotPasswordScreenController extends GetxController{
 
   CollectionReference user = FirebaseFirestore.instance.collection('user');
 
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
 
-  }
 
   void setEmail(String value) {
     email.value = value.trim();

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wallpaperapp/screens/dashboar_screen/dashboard_controller.dart';
+import 'package:wallpaperapp/services/facebook_ads/Interstitial_ads/Interstitial_ads.dart';
+import 'package:wallpaperapp/services/facebook_ads/baner_ads/baner_ads.dart';
 import 'package:wallpaperapp/utils/assets_res.dart';
 
 Widget bottomNavigationBar(BuildContext context) {
   DashBoardController dashBoardController = Get.put(DashBoardController());
+
   return Container(
     height: MediaQuery.of(context).size.height * 0.115,
     width: Get.width * 0.8,
@@ -32,6 +35,7 @@ Widget bottomNavigationBar(BuildContext context) {
         Obx(
           () => GestureDetector(
               onTap: () {
+
                 dashBoardController.selectedItem.value = 1;
               },
               child: SizedBox(

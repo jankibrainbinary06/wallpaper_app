@@ -13,6 +13,8 @@ import 'package:wallpaperapp/screens/forgot_screen/forgot_screen.dart';
 import 'package:wallpaperapp/screens/home_screen/home_controller.dart';
 import 'package:wallpaperapp/screens/only_view_wallpaper_screen/only_view_wallpaper_screen.dart';
 import 'package:wallpaperapp/screens/sign_in_screen/sign_in_screen.dart';
+import 'package:wallpaperapp/services/google_ads/Interstitial_ads/Interstitial_ads.dart';
+import 'package:wallpaperapp/services/google_ads/banner_ads/banner_ads.dart';
 import 'package:wallpaperapp/services/pref_servies.dart';
 import 'package:wallpaperapp/utils/assets_res.dart';
 import 'package:wallpaperapp/utils/colorRes.dart';
@@ -26,6 +28,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   HomeController homeController = Get.put(HomeController());
+  CustomInterstitialAd customInterstitialAdController = Get.put(CustomInterstitialAd());
   final MyController myController = MyController();
 
   @override
@@ -146,6 +149,8 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       height: Get.height * 0.04,
                     ),
+
+                    CustomBannerAd(),
                     GetBuilder<HomeController>(
                       id: 'data',
                       builder: (controller) {
@@ -182,6 +187,7 @@ class HomeScreen extends StatelessWidget {
                                   } else {
                                     return GestureDetector(
                                       onTap: () async {
+                                        customInterstitialAdController.showInterstitialAd();
                                         if (homeController.aBoolList[0] == true) {
                                           await homeController.onTapImage2('1',
                                               homeController.allImage.length);
@@ -191,6 +197,8 @@ class HomeScreen extends StatelessWidget {
                                               ['id'],
                                               homeController.allImage.length);
                                         }
+
+
                                         Get.to(
                                                 () => OnlyViewWallpaperScreen(
                                               image: homeController
@@ -204,6 +212,8 @@ class HomeScreen extends StatelessWidget {
                                               homeController.myBoolList,
                                             ),
                                             arguments: index);
+
+
                                       },
                                       child: Stack(
                                         children: [
@@ -269,6 +279,7 @@ class HomeScreen extends StatelessWidget {
                                               ),
                                             ),
                                           ),
+
                                         ],
                                       ),
                                     );
@@ -405,7 +416,7 @@ class HomeScreen extends StatelessWidget {
                     if (PrefService.getBool('isUser')) {
                       openScreen(context);
                     } else {
-                      Get.to(SignInScreen());
+                     Get.to(SignInScreen());
                     }
                   },
                   child: Container(
@@ -469,7 +480,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               Container(
                 height: Get.height * 0.4,
-                width: Get.width * 0.8,
+                width: kIsWeb?500:Get.width * 0.8,
                 decoration: BoxDecoration(
                     color: Colors.black,
                     border: Border.all(color: Colors.white),
@@ -477,6 +488,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+
                       Expanded(
                         child: Align(
                           alignment: Alignment.topRight,
@@ -506,7 +518,7 @@ class HomeScreen extends StatelessWidget {
                           StringRes.AreYouSure,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: Get.width * 0.06,
+                              fontSize: kIsWeb?18:Get.width * 0.06,
                               color: Colors.white,
                               fontFamily: "blackfont"),
                         ),
@@ -524,8 +536,8 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: Container(
                           alignment: Alignment.center,
-                          height: Get.height * 0.08,
-                          width: Get.width * 0.45,
+                          height:kIsWeb? 55:Get.height * 0.08,
+                          width: kIsWeb?160:Get.width * 0.45,
                           decoration: BoxDecoration(
                               color: ColorRes.splashButton,
                               borderRadius: BorderRadius.circular(40)),
@@ -533,7 +545,7 @@ class HomeScreen extends StatelessWidget {
                             StringRes.Yes,
                             style: TextStyle(
                                 fontWeight: FontWeight.w800,
-                                fontSize: Get.width * 0.06,
+                                fontSize: kIsWeb?15:Get.width * 0.06,
                                 color: Colors.black,
                                 fontFamily: "regularfont"),
                           ),

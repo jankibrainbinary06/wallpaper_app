@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:wallpaperapp/screens/categories_screen/categories_controller.dart';
 import 'package:wallpaperapp/screens/categories_screen/screens/view_categories/view_categories_screen.dart';
+import 'package:wallpaperapp/services/facebook_ads/baner_ads/baner_ads.dart';
 import 'package:wallpaperapp/utils/assets_res.dart';
 import 'package:wallpaperapp/utils/strings.dart';
 
@@ -44,6 +45,7 @@ class CategoriesScreen extends StatelessWidget {
                   SizedBox(
                     height: Get.height * 0.05,
                   ),
+
                   StreamBuilder(
                     stream: FirebaseFirestore.instance
                         .collection('category')
@@ -227,6 +229,7 @@ class CategoriesScreen extends StatelessWidget {
                       }
                     },
                   ),
+                 kIsWeb? SizedBox():FaveBookBannerAds(),
                 ],
               ),
             ],

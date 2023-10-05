@@ -17,6 +17,8 @@ import 'package:share/share.dart';
 import 'package:wallpaperapp/screens/categories_screen/screens/lock_screen/lock_screen.dart';
 import 'package:wallpaperapp/screens/only_view_wallpaper_screen/only_view_wallpaper_controller.dart';
 import 'package:wallpaperapp/screens/wallpaper_preview_screen/wallpaper_preview_screen.dart';
+import 'package:wallpaperapp/services/facebook_ads/Interstitial_ads/Interstitial_ads.dart';
+import 'package:wallpaperapp/services/google_ads/Interstitial_ads/Interstitial_ads.dart';
 import 'package:wallpaperapp/services/pref_servies.dart';
 import 'package:wallpaperapp/utils/assets_res.dart';
 import 'package:wallpaperapp/utils/pref_key.dart';
@@ -36,9 +38,11 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
 
   OnlyViewWallpaperController onlyViewWallpaperController =
       Get.put(OnlyViewWallpaperController());
-
+  CustomInterstitialAd customInterstitialAdController = Get.put(CustomInterstitialAd());
+  CustomFacebookInterstitialAd customFacebookInterstitialAdController = Get.put(CustomFacebookInterstitialAd());
   @override
   Widget build(BuildContext context) {
+
     onlyViewWallpaperController.onInit();
 
     return Scaffold(
@@ -82,7 +86,7 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                 children: [
                                   GestureDetector(
                                     onTap: () {
-                                      Get.back();
+                                      kIsWeb? Get.back(): customFacebookInterstitialAdController.showFacebookInterstitialAd();
                                     },
                                     child: Container(
                                       height: 50,
@@ -210,6 +214,7 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                   ),
                                   GestureDetector(
                                     onTap: () async {
+
                                       if (favBoolList[index]) {
                                         favBoolList[index] = false;
                                         await onlyViewWallpaperController
