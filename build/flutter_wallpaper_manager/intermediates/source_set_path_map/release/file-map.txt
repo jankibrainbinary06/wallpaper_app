@@ -1,0 +1,12 @@
+com.pk.wallpapermanager.flutter_wallpaper_manager-jetified-window-1.0.0-beta04-0 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\res
+com.pk.wallpapermanager.flutter_wallpaper_manager-jetified-annotation-experimental-1.1.0-1 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\res
+com.pk.wallpapermanager.flutter_wallpaper_manager-core-1.6.0-2 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\res
+com.pk.wallpapermanager.flutter_wallpaper_manager-jetified-window-java-1.0.0-beta04-3 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
+com.pk.wallpapermanager.flutter_wallpaper_manager-main-4 C:\Users\Brainbinary Infotech\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_wallpaper_manager-0.0.4\android\src\main\res
+com.pk.wallpapermanager.flutter_wallpaper_manager-release-5 C:\Users\Brainbinary Infotech\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_wallpaper_manager-0.0.4\android\src\release\res
+com.pk.wallpapermanager.flutter_wallpaper_manager-pngs-6 E:\Mayur\wallpaper_app\build\flutter_wallpaper_manager\generated\res\pngs\release
+com.pk.wallpapermanager.flutter_wallpaper_manager-resValues-7 E:\Mayur\wallpaper_app\build\flutter_wallpaper_manager\generated\res\resValues\release
+com.pk.wallpapermanager.flutter_wallpaper_manager-rs-8 E:\Mayur\wallpaper_app\build\flutter_wallpaper_manager\generated\res\rs\release
+com.pk.wallpapermanager.flutter_wallpaper_manager-mergeReleaseResources-9 E:\Mayur\wallpaper_app\build\flutter_wallpaper_manager\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.pk.wallpapermanager.flutter_wallpaper_manager-mergeReleaseResources-10 E:\Mayur\wallpaper_app\build\flutter_wallpaper_manager\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.pk.wallpapermanager.flutter_wallpaper_manager-merged_res-11 E:\Mayur\wallpaper_app\build\flutter_wallpaper_manager\intermediates\merged_res\release

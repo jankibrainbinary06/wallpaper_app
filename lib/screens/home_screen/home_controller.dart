@@ -39,8 +39,8 @@ class HomeController extends GetxController {
     aBoolList = List.generate(length, (index) => false);
     if (aBoolList[index]) {
       aBoolList[index] = false;
-      update(['boolList']);
-      update(['data']);
+    //  update(['boolList']);
+     // update(['data']);
     } else {
       aBoolList[index] = true;
 
@@ -54,8 +54,8 @@ class HomeController extends GetxController {
                 'isFav': e['isFav'],
                 'id': element.id,
               });
-              update(['boolList']);
-              update(['data']);
+           //   update(['boolList']);
+             // update(['data']);
             });
           });
         });
@@ -70,23 +70,23 @@ class HomeController extends GetxController {
                   'isFav': e['isFav'],
                   'id': element.id,
                 });
-                update(['boolList']);
-                update(['data']);
+               // update(['boolList']);
+              //  update(['data']);
               });
             }
           });
         });
       }
-      update(['boolList']);
-      update(['data']);
+      //update(['boolList']);
+     // update(['data']);
     }
   }
 
   boolGenerate(int length) {
     aBoolList = List.generate(length, (index) => false);
     aBoolList[0] = true;
-    update(['boolList']);
-    update(['data']);
+   // update(['boolList']);
+    //update(['data']);
   }
 
   Future<void> onTapImage(String image) async {

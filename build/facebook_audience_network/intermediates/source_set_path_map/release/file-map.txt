@@ -1,0 +1,15 @@
+com.dsi.facebook_audience_network-jetified-window-1.0.0-beta04-0 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\res
+com.dsi.facebook_audience_network-jetified-annotation-experimental-1.1.0-1 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\res
+com.dsi.facebook_audience_network-jetified-play-services-basement-11.0.4-2 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\750e97c6474acbca05c3e8c34ae1367c\transformed\jetified-play-services-basement-11.0.4\res
+com.dsi.facebook_audience_network-core-1.6.0-3 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\res
+com.dsi.facebook_audience_network-jetified-window-java-1.0.0-beta04-4 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
+com.dsi.facebook_audience_network-coordinatorlayout-1.0.0-5 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\c0c5f8382331f2d900d2cb549c45e898\transformed\coordinatorlayout-1.0.0\res
+com.dsi.facebook_audience_network-media-1.0.0-6 C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\d9fefd3231d7c549dee86f94a8a71d09\transformed\media-1.0.0\res
+com.dsi.facebook_audience_network-main-7 C:\Users\Brainbinary Infotech\AppData\Local\Pub\Cache\hosted\pub.dev\facebook_audience_network-1.0.1\android\src\main\res
+com.dsi.facebook_audience_network-release-8 C:\Users\Brainbinary Infotech\AppData\Local\Pub\Cache\hosted\pub.dev\facebook_audience_network-1.0.1\android\src\release\res
+com.dsi.facebook_audience_network-pngs-9 E:\Mayur\wallpaper_app\build\facebook_audience_network\generated\res\pngs\release
+com.dsi.facebook_audience_network-resValues-10 E:\Mayur\wallpaper_app\build\facebook_audience_network\generated\res\resValues\release
+com.dsi.facebook_audience_network-rs-11 E:\Mayur\wallpaper_app\build\facebook_audience_network\generated\res\rs\release
+com.dsi.facebook_audience_network-mergeReleaseResources-12 E:\Mayur\wallpaper_app\build\facebook_audience_network\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.dsi.facebook_audience_network-mergeReleaseResources-13 E:\Mayur\wallpaper_app\build\facebook_audience_network\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.dsi.facebook_audience_network-merged_res-14 E:\Mayur\wallpaper_app\build\facebook_audience_network\intermediates\merged_res\release

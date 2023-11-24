@@ -224,7 +224,7 @@ class CategoriesScreen extends StatelessWidget {
                       }
                     },
                   ),
-                 kIsWeb? const SizedBox():const FaveBookBannerAds(),
+              //   kIsWeb? const SizedBox():const FaveBookBannerAds(),
                 ],
               ),
             ],

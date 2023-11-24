@@ -64,87 +64,86 @@ class HomeScreen extends StatelessWidget {
                               fit: BoxFit.fill,
                               image: AssetImage(AssetRes.backgroundImage))),
                     ),
-                    GetBuilder<HomeController>(
-                      id: 'boolList',
-                      builder: (controller) {
-                        return StreamBuilder(
-                          stream: FirebaseFirestore.instance
-                              .collection('category')
-                              .snapshots(),
-                          builder:
-                              (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                            homeController.allCategory.clear();
-                            homeController.allCategory
-                                .add({"name": "All", "id": "1"});
-                            snapshot.data?.docs.forEach((element) {
-                              homeController.allCategory.add({
-                                "name": element['name'],
-                                "id": element.id,
-                              });
-                            });
-                            if (homeController.aBoolList.length !=
-                                (homeController.allCategory.length)) {
-                              homeController.boolGenerate(
-                                  homeController.allCategory.length);
+          GetBuilder<HomeController>(
+            id: 'boolList',
+            builder: (controller) {
+              return StreamBuilder(
+                stream: FirebaseFirestore.instance.collection('category').snapshots(),
+                builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                  homeController.allCategory.clear();
+                  homeController.allCategory.add({"name": "All", "id": "1"});
+                  snapshot.data?.docs.forEach((element) {
+                    homeController.allCategory.add({
+                      "name": element['name'],
+                      "id": element.id,
+                    });
+                  });
+                  if (homeController.aBoolList.length !=
+                      (homeController.allCategory.length)) {
+                    homeController.boolGenerate(homeController.allCategory.length);
+                    homeController.onTapCategory(
+                        0, homeController.allCategory.length, "1");
+                  } else {}
+
+                  // Schedule the update for the next frame
+                  Future.delayed(Duration.zero, () {
+                    homeController.update(['boolList']);
+                    homeController.update(['data']);
+                  });
+
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 25, right: 25),
+                    child: SizedBox(
+                      height: Get.height * 0.07,
+                      child: ListView.separated(
+                        itemCount: homeController.allCategory.length,
+                        separatorBuilder: (context, index) {
+                          return const SizedBox(
+                            width: 10,
+                          );
+                        },
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () {
                               homeController.onTapCategory(
-                                  0, homeController.allCategory.length, "1");
-                            } else {}
-                            return Padding(
-                              padding: const EdgeInsets.only(left: 25, right: 25),
-                              child: SizedBox(
-                                height: Get.height * 0.07,
-                                child: ListView.separated(
-                                  itemCount: homeController.allCategory.length,
-                                  separatorBuilder: (context, index) {
-                                    return const SizedBox(
-                                      width: 10,
-                                    );
-                                  },
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) {
-                                    return GestureDetector(
-                                      onTap: () {
-                                        homeController.onTapCategory(
-                                            index,
-                                            homeController.allCategory.length,
-                                            homeController.allCategory[index]
-                                            ['id']);
-                                        homeController.update(['boolList']);
-                                        homeController.update(['data']);
-                                      },
-                                      child: Container(
-                                        alignment: Alignment.center,
-                                        height: Get.height * 0.07,
-                                        width: kIsWeb? 220:Get.width * 0.3,
-                                        decoration: BoxDecoration(
-                                            color: homeController.aBoolList[index]
-                                                ? ColorRes.splashButton
-                                                : Colors.transparent,
-                                            borderRadius:
-                                            BorderRadius.circular(17)),
-                                        child: Text(
-                                          homeController.allCategory[index]
-                                          ['name'],
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: kIsWeb ?15: Get.width * 0.044,
-                                              color:
-                                              homeController.aBoolList[index]
-                                                  ? Colors.black
-                                                  : Colors.white,
-                                              fontFamily: "regularfont"),
-                                        ),
-                                      ),
-                                    );
-                                  },
+                                  index,
+                                  homeController.allCategory.length,
+                                  homeController.allCategory[index]['id']);
+                            },
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: Get.height * 0.07,
+                              width: kIsWeb ? 220 : Get.width * 0.3,
+                              decoration: BoxDecoration(
+                                color: homeController.aBoolList[index]
+                                    ? ColorRes.splashButton
+                                    : Colors.transparent,
+                                borderRadius: BorderRadius.circular(17),
+                              ),
+                              child: Text(
+                                homeController.allCategory[index]['name'],
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: kIsWeb ? 15 : Get.width * 0.044,
+                                  color: homeController.aBoolList[index]
+                                      ? Colors.black
+                                      : Colors.white,
+                                  fontFamily: "regularfont",
                                 ),
                               ),
-                            );
-                          },
-                        );
-                      },
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                    SizedBox(
+                  );
+                },
+              );
+            },
+          ),
+
+          SizedBox(
                       height: Get.height * 0.04,
                     ),
 

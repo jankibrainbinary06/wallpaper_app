@@ -1,0 +1,720 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.wallpaperapp"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:2:5-67
+11-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:2:22-64
+12    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+12-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:3:5-78
+12-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:3:22-76
+13    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+13-->[:flutter_wallpaper_manager] E:\Mayur\wallpaper_app\build\flutter_wallpaper_manager\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-72
+13-->[:flutter_wallpaper_manager] E:\Mayur\wallpaper_app\build\flutter_wallpaper_manager\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-69
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-80
+14-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-77
+15
+16    <queries>
+16-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-17:15
+17        <intent>
+17-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:12:9-16:18
+18            <action android:name="android.intent.action.GET_CONTENT" />
+18-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-72
+18-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:13:21-69
+19
+20            <data android:mimeType="*/*" />
+20-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-44
+20-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:15:19-41
+21        </intent>
+22
+23        <package android:name="com.facebook.katana" /> <!-- For browser content -->
+23-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:12:9-55
+23-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:12:18-52
+24        <intent>
+24-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:38:9-44:18
+25            <action android:name="android.intent.action.VIEW" />
+25-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:36:17-69
+25-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:36:25-66
+26
+27            <category android:name="android.intent.category.BROWSABLE" />
+27-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:39:17-78
+27-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:39:27-75
+28
+29            <data android:scheme="https" />
+29-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-44
+30        </intent> <!-- End of browser content -->
+31        <!-- For CustomTabsService -->
+32        <intent>
+32-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:47:9-49:18
+33            <action android:name="android.support.customtabs.action.CustomTabsService" />
+33-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:48:13-90
+33-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:48:21-87
+34        </intent>
+35    </queries>
+36
+37    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+37-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:26:5-79
+37-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:26:22-76
+38    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+38-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:27:5-82
+38-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:27:22-79
+39    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+39-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:28:5-88
+39-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:28:22-85
+40    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_TOPICS" />
+40-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:29:5-83
+40-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:29:22-80
+41    <uses-permission android:name="android.permission.WAKE_LOCK" />
+41-->[com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\67bd1e2ed67b95ed59b0e94933caa8aa\transformed\jetified-play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:25:5-68
+41-->[com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\67bd1e2ed67b95ed59b0e94933caa8aa\transformed\jetified-play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:25:22-65
+42    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+42-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:28:5-77
+42-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:28:22-74
+43
+44    <permission
+44-->[androidx.core:core:1.10.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\c4988ff80110f75080a936fc6f044848\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+45        android:name="com.example.wallpaperapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+45-->[androidx.core:core:1.10.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\c4988ff80110f75080a936fc6f044848\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+46        android:protectionLevel="signature" />
+46-->[androidx.core:core:1.10.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\c4988ff80110f75080a936fc6f044848\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+47
+48    <uses-permission android:name="com.example.wallpaperapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+48-->[androidx.core:core:1.10.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\c4988ff80110f75080a936fc6f044848\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+48-->[androidx.core:core:1.10.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\c4988ff80110f75080a936fc6f044848\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+49
+50    <application
+51        android:name="android.app.Application"
+51-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:6:9-42
+52        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+52-->[androidx.core:core:1.10.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\c4988ff80110f75080a936fc6f044848\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+53        android:extractNativeLibs="false"
+54        android:hardwareAccelerated="true"
+54-->[:facebook_audience_network] E:\Mayur\wallpaper_app\build\facebook_audience_network\intermediates\merged_manifest\release\AndroidManifest.xml:9:18-52
+55        android:icon="@mipmap/ic_launcher"
+55-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:7:9-43
+56        android:label="wallpaperapp" >
+56-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:5:9-37
+57        <meta-data
+57-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:8:9-10:69
+58            android:name="com.google.android.gms.ads.APPLICATION_ID"
+58-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:9:13-69
+59            android:value="ca-app-pub-3940256099942544~3347511713" />
+59-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:10:13-67
+60
+61        <activity
+61-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:12:9-33:20
+62            android:name="com.example.wallpaperapp.MainActivity"
+62-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:13:13-41
+63            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+63-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:17:13-163
+64            android:exported="true"
+64-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:14:13-36
+65            android:hardwareAccelerated="true"
+65-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:18:13-47
+66            android:launchMode="singleTop"
+66-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:15:13-43
+67            android:theme="@style/LaunchTheme"
+67-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:16:13-47
+68            android:windowSoftInputMode="adjustResize" >
+68-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:19:13-55
+69
+70            <!--
+71                 Specifies an Android theme to apply to this Activity as soon as
+72                 the Android process has started. This theme is visible to the user
+73                 while the Flutter UI initializes. After that, this theme continues
+74                 to determine the Window background behind the Flutter UI.
+75            -->
+76            <meta-data
+76-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:24:13-27:17
+77                android:name="io.flutter.embedding.android.NormalTheme"
+77-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:25:15-70
+78                android:resource="@style/NormalTheme" />
+78-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:26:15-52
+79
+80            <intent-filter>
+80-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:29:13-32:29
+81                <action android:name="android.intent.action.MAIN" />
+81-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:30:17-68
+81-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:30:25-66
+82
+83                <category android:name="android.intent.category.LAUNCHER" />
+83-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:31:17-76
+83-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:31:27-74
+84            </intent-filter>
+85        </activity>
+86        <!--
+87             Don't delete the meta-data below.
+88             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+89        -->
+90        <meta-data
+90-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:36:9-38:33
+91            android:name="flutterEmbedding"
+91-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:37:13-44
+92            android:value="2" />
+92-->E:\Mayur\wallpaper_app\android\app\src\main\AndroidManifest.xml:38:13-30
+93
+94        <service
+94-->[:cloud_firestore] E:\Mayur\wallpaper_app\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-14:19
+95            android:name="com.google.firebase.components.ComponentDiscoveryService"
+95-->[:cloud_firestore] E:\Mayur\wallpaper_app\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:10:18-89
+96            android:directBootAware="true"
+96-->[com.google.firebase:firebase-common:20.3.3] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\6f9fa5902813f78de2aefcdfcdb180f7\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:34:13-43
+97            android:exported="false" >
+97-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:68:13-37
+98            <meta-data
+98-->[:cloud_firestore] E:\Mayur\wallpaper_app\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
+99                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+99-->[:cloud_firestore] E:\Mayur\wallpaper_app\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-134
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[:cloud_firestore] E:\Mayur\wallpaper_app\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
+101            <meta-data
+101-->[:firebase_auth] E:\Mayur\wallpaper_app\build\firebase_auth\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
+102                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+102-->[:firebase_auth] E:\Mayur\wallpaper_app\build\firebase_auth\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-124
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[:firebase_auth] E:\Mayur\wallpaper_app\build\firebase_auth\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
+104            <meta-data
+104-->[:firebase_storage] E:\Mayur\wallpaper_app\build\firebase_storage\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
+105                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+105-->[:firebase_storage] E:\Mayur\wallpaper_app\build\firebase_storage\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-126
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[:firebase_storage] E:\Mayur\wallpaper_app\build\firebase_storage\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
+107            <meta-data
+107-->[:firebase_core] E:\Mayur\wallpaper_app\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
+108                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+108-->[:firebase_core] E:\Mayur\wallpaper_app\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-124
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[:firebase_core] E:\Mayur\wallpaper_app\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
+110            <meta-data
+110-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:69:13-71:85
+111                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+111-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:70:17-109
+112                android:value="com.google.firebase.components.ComponentRegistrar" />
+112-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:71:17-82
+113            <meta-data
+113-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\a9cfc3ff019179332ac9fe79037eb037\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:17:13-19:85
+114                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+114-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\a9cfc3ff019179332ac9fe79037eb037\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:18:17-111
+115                android:value="com.google.firebase.components.ComponentRegistrar" />
+115-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\a9cfc3ff019179332ac9fe79037eb037\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:19:17-82
+116            <meta-data
+116-->[com.google.firebase:firebase-storage:20.2.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\48401fbb896ab8a6384fcb26fc783a9e\transformed\jetified-firebase-storage-20.2.1\AndroidManifest.xml:32:13-34:85
+117                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+117-->[com.google.firebase:firebase-storage:20.2.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\48401fbb896ab8a6384fcb26fc783a9e\transformed\jetified-firebase-storage-20.2.1\AndroidManifest.xml:33:17-107
+118                android:value="com.google.firebase.components.ComponentRegistrar" />
+118-->[com.google.firebase:firebase-storage:20.2.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\48401fbb896ab8a6384fcb26fc783a9e\transformed\jetified-firebase-storage-20.2.1\AndroidManifest.xml:34:17-82
+119        </service>
+120
+121        <provider
+121-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-18:20
+122            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+122-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-82
+123            android:authorities="com.example.wallpaperapp.flutter.image_provider"
+123-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-74
+124            android:exported="false"
+124-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-37
+125            android:grantUriPermissions="true" >
+125-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-47
+126            <meta-data
+126-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-17:75
+127                android:name="android.support.FILE_PROVIDER_PATHS"
+127-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:16:17-67
+128                android:resource="@xml/flutter_image_picker_file_paths" />
+128-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:17:17-72
+129        </provider>
+130
+131        <meta-data
+131-->[:google_mobile_ads] E:\Mayur\wallpaper_app\build\google_mobile_ads\intermediates\merged_manifest\release\AndroidManifest.xml:12:9-14:36
+132            android:name="io.flutter.embedded_views_preview"
+132-->[:google_mobile_ads] E:\Mayur\wallpaper_app\build\google_mobile_ads\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-61
+133            android:value="true" />
+133-->[:google_mobile_ads] E:\Mayur\wallpaper_app\build\google_mobile_ads\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-33
+134
+135        <provider
+135-->[:share] E:\Mayur\wallpaper_app\build\share\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-18:20
+136            android:name="io.flutter.plugins.share.ShareFileProvider"
+136-->[:share] E:\Mayur\wallpaper_app\build\share\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-70
+137            android:authorities="com.example.wallpaperapp.flutter.share_provider"
+137-->[:share] E:\Mayur\wallpaper_app\build\share\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-74
+138            android:exported="false"
+138-->[:share] E:\Mayur\wallpaper_app\build\share\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-37
+139            android:grantUriPermissions="true" >
+139-->[:share] E:\Mayur\wallpaper_app\build\share\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-47
+140            <meta-data
+140-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-17:75
+141                android:name="android.support.FILE_PROVIDER_PATHS"
+141-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:16:17-67
+142                android:resource="@xml/flutter_share_file_paths" />
+142-->[:image_picker_android] E:\Mayur\wallpaper_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:17:17-72
+143        </provider>
+144
+145        <uses-library
+145-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\28d5669ab41ff46c299fe97924d2280e\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:23:9-25:40
+146            android:name="android.ext.adservices"
+146-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\28d5669ab41ff46c299fe97924d2280e\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:24:13-50
+147            android:required="false" />
+147-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\28d5669ab41ff46c299fe97924d2280e\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:25:13-37
+148
+149        <activity
+149-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:23:9-27:75
+150            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+150-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:24:13-93
+151            android:excludeFromRecents="true"
+151-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:25:13-46
+152            android:exported="false"
+152-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:26:13-37
+153            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+153-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:27:13-72
+154        <!--
+155            Service handling Google Sign-In user revocation. For apps that do not integrate with
+156            Google Sign-In, this service will never be started.
+157        -->
+158        <service
+158-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:33:9-37:51
+159            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+159-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:34:13-89
+160            android:exported="true"
+160-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:35:13-36
+161            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+161-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:36:13-107
+162            android:visibleToInstantApps="true" />
+162-->[com.google.android.gms:play-services-auth:20.4.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:37:13-48
+163
+164        <activity
+164-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:29:9-46:20
+165            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+165-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:30:13-80
+166            android:excludeFromRecents="true"
+166-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:31:13-46
+167            android:exported="true"
+167-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:32:13-36
+168            android:launchMode="singleTask"
+168-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:33:13-44
+169            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+169-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:34:13-72
+170            <intent-filter>
+170-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:35:13-45:29
+171                <action android:name="android.intent.action.VIEW" />
+171-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:36:17-69
+171-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:36:25-66
+172
+173                <category android:name="android.intent.category.DEFAULT" />
+173-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:38:17-76
+173-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:38:27-73
+174                <category android:name="android.intent.category.BROWSABLE" />
+174-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:39:17-78
+174-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:39:27-75
+175
+176                <data
+176-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-44
+177                    android:host="firebase.auth"
+178                    android:path="/"
+179                    android:scheme="genericidp" />
+180            </intent-filter>
+181        </activity>
+182        <activity
+182-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:47:9-64:20
+183            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+183-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:48:13-79
+184            android:excludeFromRecents="true"
+184-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:49:13-46
+185            android:exported="true"
+185-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:50:13-36
+186            android:launchMode="singleTask"
+186-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:51:13-44
+187            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+187-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:52:13-72
+188            <intent-filter>
+188-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:53:13-63:29
+189                <action android:name="android.intent.action.VIEW" />
+189-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:36:17-69
+189-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:36:25-66
+190
+191                <category android:name="android.intent.category.DEFAULT" />
+191-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:38:17-76
+191-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:38:27-73
+192                <category android:name="android.intent.category.BROWSABLE" />
+192-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:39:17-78
+192-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b7396143902b28e5fc1a8d7943d935fb\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:39:27-75
+193
+194                <data
+194-->[:file_picker] E:\Mayur\wallpaper_app\build\file_picker\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-44
+195                    android:host="firebase.auth"
+196                    android:path="/"
+197                    android:scheme="recaptcha" />
+198            </intent-filter>
+199        </activity>
+200        <activity
+200-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:20:9-24:75
+201            android:name="com.facebook.ads.AudienceNetworkActivity"
+201-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:21:13-68
+202            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
+202-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:22:13-106
+203            android:exported="false"
+203-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:23:13-37
+204            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+204-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:24:13-72
+205
+206        <provider
+206-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:26:9-29:40
+207            android:name="com.facebook.ads.AudienceNetworkContentProvider"
+207-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:27:13-75
+208            android:authorities="com.example.wallpaperapp.AudienceNetworkContentProvider"
+208-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:28:13-82
+209            android:exported="false" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+209-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\221a4ad6b68897741468480dc886c928\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:29:13-37
+210        <activity
+210-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:56:9-61:43
+211            android:name="com.google.android.gms.ads.AdActivity"
+211-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:57:13-65
+212            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+212-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:58:13-122
+213            android:exported="false"
+213-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:59:13-37
+214            android:theme="@android:style/Theme.Translucent" />
+214-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:60:13-61
+215
+216        <provider
+216-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:63:9-68:43
+217            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+217-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:64:13-76
+218            android:authorities="com.example.wallpaperapp.mobileadsinitprovider"
+218-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:65:13-73
+219            android:exported="false"
+219-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:66:13-37
+220            android:initOrder="100" />
+220-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:67:13-36
+221
+222        <service
+222-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:70:9-74:43
+223            android:name="com.google.android.gms.ads.AdService"
+223-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:71:13-64
+224            android:enabled="true"
+224-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:72:13-35
+225            android:exported="false" />
+225-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:73:13-37
+226
+227        <activity
+227-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:76:9-80:43
+228            android:name="com.google.android.gms.ads.OutOfContextTestingActivity"
+228-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:77:13-82
+229            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+229-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:78:13-122
+230            android:exported="false" />
+230-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:79:13-37
+231
+232        <property
+232-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:82:9-84:62
+233            android:name="android.adservices.AD_SERVICES_CONFIG"
+233-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:83:13-65
+234            android:resource="@xml/gma_ad_services_config" />
+234-->[com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\ab2130f1f7b298251527031f2c045455\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:84:13-59
+235
+236        <provider
+236-->[com.google.firebase:firebase-common:20.3.3] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\6f9fa5902813f78de2aefcdfcdb180f7\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:25:9-30:39
+237            android:name="com.google.firebase.provider.FirebaseInitProvider"
+237-->[com.google.firebase:firebase-common:20.3.3] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\6f9fa5902813f78de2aefcdfcdb180f7\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:26:13-77
+238            android:authorities="com.example.wallpaperapp.firebaseinitprovider"
+238-->[com.google.firebase:firebase-common:20.3.3] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\6f9fa5902813f78de2aefcdfcdb180f7\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:27:13-72
+239            android:directBootAware="true"
+239-->[com.google.firebase:firebase-common:20.3.3] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\6f9fa5902813f78de2aefcdfcdb180f7\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:28:13-43
+240            android:exported="false"
+240-->[com.google.firebase:firebase-common:20.3.3] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\6f9fa5902813f78de2aefcdfcdb180f7\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:29:13-37
+241            android:initOrder="100" />
+241-->[com.google.firebase:firebase-common:20.3.3] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\6f9fa5902813f78de2aefcdfcdb180f7\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:30:13-36
+242
+243        <activity
+243-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\aba8f806953ea3dd8f794da3aeb78a12\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+244            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+244-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\aba8f806953ea3dd8f794da3aeb78a12\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+245            android:exported="false"
+245-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\aba8f806953ea3dd8f794da3aeb78a12\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+246            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+246-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\aba8f806953ea3dd8f794da3aeb78a12\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+247
+248        <meta-data
+248-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\f5aeeb70e4aa208ac830e747eaf33ddc\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
+249            android:name="com.google.android.gms.version"
+249-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\f5aeeb70e4aa208ac830e747eaf33ddc\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
+250            android:value="@integer/google_play_services_version" />
+250-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\f5aeeb70e4aa208ac830e747eaf33ddc\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
+251
+252        <provider
+252-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:31:9-39:20
+253            android:name="androidx.startup.InitializationProvider"
+253-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:32:13-67
+254            android:authorities="com.example.wallpaperapp.androidx-startup"
+254-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:33:13-68
+255            android:exported="false" >
+255-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:34:13-37
+256            <meta-data
+256-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:36:13-38:52
+257                android:name="androidx.work.WorkManagerInitializer"
+257-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:37:17-68
+258                android:value="androidx.startup" />
+258-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:38:17-49
+259            <meta-data
+259-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\34e3313412f6bb2343705c93422b49a8\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+260                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+260-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\34e3313412f6bb2343705c93422b49a8\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+261                android:value="androidx.startup" />
+261-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\34e3313412f6bb2343705c93422b49a8\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+262            <meta-data
+262-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+263                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+263-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+264                android:value="androidx.startup" />
+264-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+265        </provider>
+266
+267        <service
+267-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:41:9-46:35
+268            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+268-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:42:13-88
+269            android:directBootAware="false"
+269-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:43:13-44
+270            android:enabled="@bool/enable_system_alarm_service_default"
+270-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:44:13-72
+271            android:exported="false" />
+271-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:45:13-37
+272        <service
+272-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:47:9-53:35
+273            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+273-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:48:13-84
+274            android:directBootAware="false"
+274-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:49:13-44
+275            android:enabled="@bool/enable_system_job_service_default"
+275-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:50:13-70
+276            android:exported="true"
+276-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:51:13-36
+277            android:permission="android.permission.BIND_JOB_SERVICE" />
+277-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:52:13-69
+278        <service
+278-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:54:9-59:35
+279            android:name="androidx.work.impl.foreground.SystemForegroundService"
+279-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:55:13-81
+280            android:directBootAware="false"
+280-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:56:13-44
+281            android:enabled="@bool/enable_system_foreground_service_default"
+281-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:57:13-77
+282            android:exported="false" />
+282-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:58:13-37
+283
+284        <receiver
+284-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:61:9-66:35
+285            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+285-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:62:13-88
+286            android:directBootAware="false"
+286-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:63:13-44
+287            android:enabled="true"
+287-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:64:13-35
+288            android:exported="false" />
+288-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:65:13-37
+289        <receiver
+289-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:67:9-77:20
+290            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+290-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:68:13-106
+291            android:directBootAware="false"
+291-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:69:13-44
+292            android:enabled="false"
+292-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:70:13-36
+293            android:exported="false" >
+293-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:71:13-37
+294            <intent-filter>
+294-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:73:13-76:29
+295                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+295-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:74:17-87
+295-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:74:25-84
+296                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+296-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:75:17-90
+296-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:75:25-87
+297            </intent-filter>
+298        </receiver>
+299        <receiver
+299-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:78:9-88:20
+300            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+300-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:79:13-104
+301            android:directBootAware="false"
+301-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:80:13-44
+302            android:enabled="false"
+302-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:81:13-36
+303            android:exported="false" >
+303-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:82:13-37
+304            <intent-filter>
+304-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:84:13-87:29
+305                <action android:name="android.intent.action.BATTERY_OKAY" />
+305-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:85:17-77
+305-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:85:25-74
+306                <action android:name="android.intent.action.BATTERY_LOW" />
+306-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:86:17-76
+306-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:86:25-73
+307            </intent-filter>
+308        </receiver>
+309        <receiver
+309-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:89:9-99:20
+310            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+310-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:90:13-104
+311            android:directBootAware="false"
+311-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:91:13-44
+312            android:enabled="false"
+312-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:92:13-36
+313            android:exported="false" >
+313-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:93:13-37
+314            <intent-filter>
+314-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:95:13-98:29
+315                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+315-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:96:17-83
+315-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:96:25-80
+316                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+316-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:97:17-82
+316-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:97:25-79
+317            </intent-filter>
+318        </receiver>
+319        <receiver
+319-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:100:9-109:20
+320            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+320-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:101:13-103
+321            android:directBootAware="false"
+321-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:102:13-44
+322            android:enabled="false"
+322-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:103:13-36
+323            android:exported="false" >
+323-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:104:13-37
+324            <intent-filter>
+324-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:106:13-108:29
+325                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+325-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:107:17-79
+325-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:107:25-76
+326            </intent-filter>
+327        </receiver>
+328        <receiver
+328-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:110:9-121:20
+329            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+329-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:111:13-88
+330            android:directBootAware="false"
+330-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:112:13-44
+331            android:enabled="false"
+331-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:113:13-36
+332            android:exported="false" >
+332-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:114:13-37
+333            <intent-filter>
+333-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:116:13-120:29
+334                <action android:name="android.intent.action.BOOT_COMPLETED" />
+334-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:117:17-79
+334-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:117:25-76
+335                <action android:name="android.intent.action.TIME_SET" />
+335-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:118:17-73
+335-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:118:25-70
+336                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+336-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:119:17-81
+336-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:119:25-78
+337            </intent-filter>
+338        </receiver>
+339        <receiver
+339-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:122:9-131:20
+340            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+340-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:123:13-99
+341            android:directBootAware="false"
+341-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:124:13-44
+342            android:enabled="@bool/enable_system_alarm_service_default"
+342-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:125:13-72
+343            android:exported="false" >
+343-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:126:13-37
+344            <intent-filter>
+344-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:128:13-130:29
+345                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+345-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:129:17-98
+345-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:129:25-95
+346            </intent-filter>
+347        </receiver>
+348        <receiver
+348-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:132:9-142:20
+349            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+349-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:133:13-78
+350            android:directBootAware="false"
+350-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:134:13-44
+351            android:enabled="true"
+351-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:135:13-35
+352            android:exported="true"
+352-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:136:13-36
+353            android:permission="android.permission.DUMP" >
+353-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:137:13-57
+354            <intent-filter>
+354-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:139:13-141:29
+355                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+355-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:140:17-88
+355-->[androidx.work:work-runtime:2.7.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\0788b261b5f1c186d068c8d89bf931f5\transformed\work-runtime-2.7.0\AndroidManifest.xml:140:25-85
+356            </intent-filter>
+357        </receiver>
+358
+359        <uses-library
+359-->[androidx.window:window:1.0.0-beta04] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+360            android:name="androidx.window.extensions"
+360-->[androidx.window:window:1.0.0-beta04] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+361            android:required="false" />
+361-->[androidx.window:window:1.0.0-beta04] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+362        <uses-library
+362-->[androidx.window:window:1.0.0-beta04] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+363            android:name="androidx.window.sidecar"
+363-->[androidx.window:window:1.0.0-beta04] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+364            android:required="false" />
+364-->[androidx.window:window:1.0.0-beta04] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+365
+366        <receiver
+366-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+367            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+367-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+368            android:directBootAware="false"
+368-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+369            android:enabled="true"
+369-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+370            android:exported="true"
+370-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+371            android:permission="android.permission.DUMP" >
+371-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+372            <intent-filter>
+372-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+373                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+373-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+373-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+374            </intent-filter>
+375            <intent-filter>
+375-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+376                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+376-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+376-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+377            </intent-filter>
+378            <intent-filter>
+378-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+379                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+379-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+379-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+380            </intent-filter>
+381            <intent-filter>
+381-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+382                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+382-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+382-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+383            </intent-filter>
+384        </receiver>
+385
+386        <service
+386-->[androidx.room:room-runtime:2.2.5] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b4be91b71dbb8833b028ca23c612f59e\transformed\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+387            android:name="androidx.room.MultiInstanceInvalidationService"
+387-->[androidx.room:room-runtime:2.2.5] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b4be91b71dbb8833b028ca23c612f59e\transformed\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+388            android:directBootAware="true"
+388-->[androidx.room:room-runtime:2.2.5] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b4be91b71dbb8833b028ca23c612f59e\transformed\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+389            android:exported="false" />
+389-->[androidx.room:room-runtime:2.2.5] C:\Users\Brainbinary Infotech\.gradle\caches\transforms-3\b4be91b71dbb8833b028ca23c612f59e\transformed\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+390    </application>
+391
+392</manifest>

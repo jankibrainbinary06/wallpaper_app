@@ -7,11 +7,12 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:wallpaperapp/screens/splesh_screen/splash_screen_screen.dart';
 import 'package:wallpaperapp/services/pref_servies.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
   FacebookAudienceNetwork.init(
     testingId: "37b1da9d-b48c-4103-a393-2e095e734bd6", // Optional testing ID
+    // testingId: "37c2b58f-3382-4033-8317-603cfff0338d",
     iOSAdvertiserTrackingEnabled: true, // Default is false
   );
   await PrefService.init();
