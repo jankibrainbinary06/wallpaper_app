@@ -24,15 +24,14 @@ class SplashScreen extends StatelessWidget {
           children: [
             Container(
               height: MediaQuery.of(context).size.height * 0.5,
-              // width: Get.width * 0.8,
               decoration: const BoxDecoration(
                   image: DecorationImage(fit: BoxFit.fill,
                       image: AssetImage(AssetRes.spleashScrren))),
             ),
-            Text(StringRes.Welcome,style: TextStyle(fontSize: 40,color: Colors.white,fontWeight: FontWeight.w600,fontFamily: "boldfont"),),
+            const Text(StringRes.Welcome,style: TextStyle(fontSize: 40,color: Colors.white,fontWeight: FontWeight.w600,fontFamily: "boldfont"),),
             SizedBox(height: Get.height * 0.02,),
-            Text(StringRes.exploreTheBest,style: TextStyle(fontSize: 18,color: Colors.white,fontFamily: "spleshsubtilefont"),),
-            Text(StringRes.makeAnAwesome,style: TextStyle(fontSize: 18,color: Colors.white,fontFamily: "spleshsubtilefont"),),
+            const Text(StringRes.exploreTheBest,style: TextStyle(fontSize: 18,color: Colors.white,fontFamily: "spleshsubtilefont"),),
+            const Text(StringRes.makeAnAwesome,style: TextStyle(fontSize: 18,color: Colors.white,fontFamily: "spleshsubtilefont"),),
             SizedBox(height: Get.height * 0.06,),
             GestureDetector(
               onTap: () {
@@ -48,7 +47,7 @@ class SplashScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 16.0,right: 18.0),
                   child: SizedBox(child: Image.asset(AssetRes.spleashButtonIcon),),
                 ),
-                Text(StringRes.LetsStart,style: TextStyle(fontWeight: FontWeight.w800,fontSize: 18,color: Colors.black,fontFamily: "regularfont"),),
+                const Text(StringRes.LetsStart,style: TextStyle(fontWeight: FontWeight.w800,fontSize: 18,color: Colors.black,fontFamily: "regularfont"),),
               ]),
               ),
             ),

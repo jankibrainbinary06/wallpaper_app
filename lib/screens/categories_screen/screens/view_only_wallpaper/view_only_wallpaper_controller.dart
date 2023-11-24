@@ -1,6 +1,3 @@
-
-
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -34,7 +31,7 @@ class ViewOnlyWallpaperController extends GetxController {
     if (isUser == true) {
       favList.clear();
       await user.get().then((value) {
-        value.docs.forEach((element) {
+        for (var element in value.docs) {
           if (element.id == id) {
             element['favourite'].forEach((e) {
               favList.add({
@@ -44,7 +41,7 @@ class ViewOnlyWallpaperController extends GetxController {
             });
 
           } else {}
-        });
+        }
         favList.add({
           'image': image,
           'isFav': true,
@@ -95,7 +92,7 @@ class ViewOnlyWallpaperController extends GetxController {
     if (isUser == true) {
       favList.clear();
       await user.get().then((value) {
-        value.docs.forEach((element) {
+        for (var element in value.docs) {
           if (element.id == id) {
             element['favourite'].forEach((e) {
               favList.add({
@@ -104,7 +101,7 @@ class ViewOnlyWallpaperController extends GetxController {
               });
             });
           } else {}
-        });
+        }
         for (int i = 0; i < favList.length; i++) {
           if (image == favList[i]['image']) {
             favList.removeAt(i);

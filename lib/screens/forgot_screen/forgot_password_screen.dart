@@ -1,4 +1,3 @@
-
 // ignore_for_file: must_be_immutable, non_constant_identifier_names
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -30,14 +29,12 @@ class ForgotPasswordOtpScreen extends StatelessWidget {
                 children: [
                   Container(
                     height:MediaQuery.of(context).size.height * 0.53,
-                    // width: Get.width * 0.8,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.fill,
                             image: AssetImage(AssetRes.spleashScrren))),
                   ),
                   Positioned(
-                    //top: Get.height * 0.42,
                     bottom: 0,
                     left: kIsWeb?18: Get.width * 0.04,
                     child: Column(
@@ -92,9 +89,6 @@ class ForgotPasswordOtpScreen extends StatelessWidget {
                       focusedPinTheme: forgotPasswordOtpScreenController.defaultTheme.copyDecorationWith(
                           borderRadius: BorderRadius.circular(5),
                           border: Border.all(color: ColorRes.splashButton)),
-
-                      // onCompleted: (pin)
-                      // => Get,
                     ),
                   ),
 
@@ -187,7 +181,6 @@ class TextFieldCommonWidget2 extends StatelessWidget {
           decoration: BoxDecoration(
               color: ColorRes.white.withOpacity(0.10),
               borderRadius: BorderRadius.circular(10)),
-        //  margin: EdgeInsets.only(left: width * 0.035, right: width * 0.01),
           child: TextField(
             obscureText: obscureText ?? false,
             readOnly: readOnly ?? false,

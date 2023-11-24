@@ -2,13 +2,10 @@
 // ignore_for_file: avoid_function_literals_in_foreach_calls
 
 import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_gallery_saver/image_gallery_saver.dart';
@@ -42,7 +39,6 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
   CustomFacebookInterstitialAd customFacebookInterstitialAdController = Get.put(CustomFacebookInterstitialAd());
   @override
   Widget build(BuildContext context) {
-
     onlyViewWallpaperController.onInit();
 
     return Scaffold(
@@ -214,7 +210,6 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                   ),
                                   GestureDetector(
                                     onTap: () async {
-
                                       if (favBoolList[index]) {
                                         favBoolList[index] = false;
                                         await onlyViewWallpaperController
@@ -319,9 +314,6 @@ class OnlyViewWallpaperScreen extends StatelessWidget {
                                           PrefKeys.downloadImageList,
                                           onlyViewWallpaperController
                                               .downloadImages);
-                                      var data = PrefService.getList(
-                                          PrefKeys.downloadImageList);
-
                                       onlyViewWallpaperController.loader.value =
                                           false;
 

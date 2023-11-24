@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, empty_catches
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -29,18 +29,12 @@ class PostImageApi {
 
         if (response.statusCode == 200) {
           // print('Image uploaded successfully');
-          print(imageFile);
-          print("Status code is===============================${response.statusCode}");
-          var responded = await http.Response.fromStream(response);
-          print(responded.body);
+          //var responded = await http.Response.fromStream(response);
         } else {
-          print('Image upload failed with status code: ${response.statusCode}');
         }
       } catch (e) {
-        print('Error uploading image: $e');
       }
     } else {
-      print('Please upload a supported image format: *.png, *.svg, *.jpg, *.mp4, *.avi');
     }
   }
 }
@@ -60,7 +54,6 @@ void convertJpegToPng(File jpegFile) {
   // Write the PNG data to the new file
   pngFile.writeAsBytesSync(pngImage);
 
-  print('Conversion completed. PNG file path: ${pngFile.path}');
 }
 
 // class PostImageApi {

@@ -92,5 +92,4 @@ static const jio = "${images}jio.png";
 static const pubg = "${images}pubg.jpg";
 static const downLoad = "${images}download.jpg";
 
-
 }

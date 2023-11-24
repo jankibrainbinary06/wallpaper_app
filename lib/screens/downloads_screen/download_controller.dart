@@ -7,7 +7,6 @@ class DownloadController extends GetxController {
   List images = [];
   List imageFinalList = [];
   List myBoolList = [];
-
   @override
   void onInit() {
     // TODO: implement onInit
@@ -24,13 +23,11 @@ class DownloadController extends GetxController {
 
   Future<void> onTapDownloadImage2(length) async {
     myBoolList = [];
-
     myBoolList = List.generate(length, (index) => false);
 
     var myFavList = [];
     var myDownloadList = [];
     CollectionReference user = FirebaseFirestore.instance.collection('user');
-
     if (PrefService.getString('docId') != '') {
       await user.doc(PrefService.getString('docId')).get().then((value) {
         myFavList = [];
@@ -44,7 +41,6 @@ class DownloadController extends GetxController {
       for (int i = 0; i < images.length; i++) {
         myDownloadList.add(images[i]);
       }
-
       for (int i = 0; i < myDownloadList.length; i++) {
         for (int j = 0; j < myFavList.length; j++) {
           if (myDownloadList[i] == myFavList[j]) {

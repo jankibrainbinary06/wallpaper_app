@@ -25,9 +25,7 @@ class WallPaperPreviewScreen extends StatelessWidget {
             SizedBox(
                 height: Get.height,
                 width: Get.width,
-                child:
-
-                CachedNetworkImage(
+                child: CachedNetworkImage(
                   height: Get.height,
                   width: Get.width,
                   imageUrl: image,
@@ -41,7 +39,6 @@ class WallPaperPreviewScreen extends StatelessWidget {
                     fit: BoxFit.fill,
                   ),
                 ),
-
             ),
             CarouselSlider.builder(
               itemCount: 2,
@@ -360,8 +357,7 @@ class WallPaperPreviewScreen extends StatelessWidget {
                           ),
                         ],
                       );
-              },
-              options: CarouselOptions(
+              }, options: CarouselOptions(
                   onPageChanged: (index, reason) {},
                   enableInfiniteScroll: false,
                   height: double.infinity,

@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names
+
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-
-
 
 class CustomInterstitialAd extends GetxController
 {
@@ -17,18 +16,15 @@ class CustomInterstitialAd extends GetxController
     loadAd();
   }
 
-   loadAd() {
+  loadAd() {
     InterstitialAd.load(
       adUnitId: 'ca-app-pub-3940256099942544/1033173712', // Replace with your ad unit ID
-      request: AdRequest(),
+      request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {
-
-            interstitialAd = ad;
-
+          interstitialAd = ad;
         },
         onAdFailedToLoad: (error) {
-          print("Interstitial Ad failed to load: $error");
         },
       ),
     );
@@ -52,7 +48,6 @@ class CustomInterstitialAd extends GetxController
       adFullScreen(interstitialAd!);
       interstitialAd!.show();
     } else {
-      print('Interstitial Ad is not loaded yet.');
       loadAd(); // Load a new ad to replace the disposed one.
     }
   }

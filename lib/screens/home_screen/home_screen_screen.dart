@@ -59,7 +59,6 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Container(
                       height: MediaQuery.of(context).size.height * 0.34,
-                      // width: Get.width * 0.8,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.fill,
@@ -93,7 +92,6 @@ class HomeScreen extends StatelessWidget {
                             return Padding(
                               padding: const EdgeInsets.only(left: 25, right: 25),
                               child: SizedBox(
-                                //   width: kIsWeb ? 120:Get.width * 0.06,
                                 height: Get.height * 0.07,
                                 child: ListView.separated(
                                   itemCount: homeController.allCategory.length,
@@ -150,7 +148,7 @@ class HomeScreen extends StatelessWidget {
                       height: Get.height * 0.04,
                     ),
 
-                    CustomBannerAd(),
+                    const CustomBannerAd(),
                     GetBuilder<HomeController>(
                       id: 'data',
                       builder: (controller) {
@@ -261,19 +259,11 @@ class HomeScreen extends StatelessWidget {
                                             borderRadius:
                                             BorderRadius.circular(10),
                                             child: Container(
-                                              // height: Get.height * 0.19,
-                                              // width: Get.width * 0.86,
                                               alignment: Alignment.bottomCenter,
                                               clipBehavior: Clip.hardEdge,
                                               margin: const EdgeInsets.only(
                                                   bottom: 17),
                                               decoration: BoxDecoration(
-                                                // border: Border.all(
-                                                //     color:
-                                                //     Colors.white.withOpacity(
-                                                //       0.8,
-                                                //     ),
-                                                //     width: 0.5),
                                                 borderRadius:
                                                 BorderRadius.circular(10),
                                               ),
@@ -291,11 +281,8 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                     )
-
-                    // SizedBox(height: Get.height * 0.04,),
                   ],
                 ),
-                // SizedBox(height: Get.height * 0.07,),
                 Positioned(
                   top: 60,
                   left: 14,
@@ -324,7 +311,6 @@ class HomeScreen extends StatelessWidget {
                               color: Colors.white,
                               fontFamily: "regularfont"),
                         ),
-                        //   SizedBox(height: Get.height * 0.02,),
                       ],
                     ),
                   ),
@@ -335,8 +321,6 @@ class HomeScreen extends StatelessWidget {
         );
       },),
       drawer: Drawer(
-        // clipBehavior: Clip.none,
-
         backgroundColor: Colors.black,
         shape: const OutlineInputBorder(
             borderRadius: BorderRadius.only(topRight: Radius.circular(50))),

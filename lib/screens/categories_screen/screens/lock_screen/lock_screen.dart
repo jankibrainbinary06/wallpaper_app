@@ -16,7 +16,7 @@ class LockScreen extends StatelessWidget {
         onTap: () {
           Get.back();
         },
-                child: Stack(
+        child: Stack(
           children: [
             SizedBox(
               height: Get.height,
@@ -56,36 +56,26 @@ class LockScreen extends StatelessWidget {
                   const Spacer(),
                   Row(
                     children: [
-                      GestureDetector(
-                        onTap: () {
-
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white.withOpacity(0.3),
-                          ),
-                          child: const Icon(Icons.flashlight_on_sharp),
+                      Container(
+                        height: 50,
+                        width: 50,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white.withOpacity(0.3),
                         ),
+                        child: const Icon(Icons.flashlight_on_sharp),
                       ),
                       const Spacer(),
-                      GestureDetector(
-                        onTap: () {
-
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white.withOpacity(0.3),
-                          ),
-                          child: const Icon(Icons.camera_alt),
+                      Container(
+                        height: 50,
+                        width: 50,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white.withOpacity(0.3),
                         ),
+                        child: const Icon(Icons.camera_alt),
                       ),
                     ],
                   ),

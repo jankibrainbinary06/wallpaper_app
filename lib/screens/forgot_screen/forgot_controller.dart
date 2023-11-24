@@ -48,9 +48,7 @@ class ForgotPasswordScreenController extends GetxController{
     } else {
       emailError.value = "";
     }
-
   }
-
 
   void setPassword(String value) {
     password.value = value.trim();
@@ -106,7 +104,6 @@ class ForgotPasswordScreenController extends GetxController{
     }
   }
 
-
   void resetPassword(email) async {
     await user.get().then((value) {
 
@@ -133,18 +130,12 @@ class ForgotPasswordScreenController extends GetxController{
                   backgroundColor: Colors.red,colorText: Colors.red);
             }
           }
-          else {
-
-          }
+          else {}
         });
       }
       else{
-
-            Get.snackbar('Error', 'Invalid username!', snackPosition: SnackPosition.TOP,backgroundColor: Colors.red,colorText: Colors.white);
+        Get.snackbar('Error', 'Invalid username!', snackPosition: SnackPosition.TOP,backgroundColor: Colors.red,colorText: Colors.white);
       }
-
     });
-
-
   }
 }

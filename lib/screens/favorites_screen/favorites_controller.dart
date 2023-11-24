@@ -4,8 +4,7 @@ import 'package:wallpaperapp/services/pref_servies.dart';
 import 'package:wallpaperapp/utils/assets_res.dart';
 
 class FavoritesController extends GetxController {
-  RxInt selectedIndex = 1.obs;
-  RxInt selectedItem = 0.obs;
+
   String id = '';
 
   List myBoolList = [];
@@ -45,7 +44,6 @@ class FavoritesController extends GetxController {
       list.removeAt(index);
     });
     user.doc(PrefService.getString('docId')).update({'favourite': list});
-// updateToCategory(image,isLike);
   }
 
   updateToCategory(String image, bool isLike) async {
@@ -54,9 +52,9 @@ class FavoritesController extends GetxController {
     var id = '';
 
     await category.get().then((value) {
-      value.docs.forEach((e) {
+      for (var e in value.docs) {
         cList = e['image'];
-        cList.forEach((element) {
+        for (var element in cList) {
           if (element['imageLink'] == image) {
             list.add({
               'imageLink': element['imageLink'],
@@ -69,10 +67,9 @@ class FavoritesController extends GetxController {
               'isFav': element['isFav'],
             });
           }
-        });
-      });
+        }
+      }
     });
-
     await category.doc(id).update({
       'image': list,
     });

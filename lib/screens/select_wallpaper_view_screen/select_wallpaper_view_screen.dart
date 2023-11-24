@@ -34,7 +34,7 @@ class SelectWallpaperViewScreen extends StatelessWidget {
               SizedBox(
                 height: Get.height * 0.06,
               ),
-              Text(
+              const Text(
                 StringRes.SelectAtLeast,
                 style: TextStyle(
                     fontSize:20,
@@ -91,7 +91,6 @@ class SelectWallpaperViewScreen extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.7,
                       width: Get.width * 0.9,
                       child: GridView.builder(
-                        // itemCount: dasBoardController.imageList.length,
                         itemCount: snapshot.data?.docs.length ?? 0,
                         gridDelegate:
                         SliverGridDelegateWithFixedCrossAxisCount(
@@ -132,13 +131,10 @@ class SelectWallpaperViewScreen extends StatelessWidget {
                                             materialTapTargetSize:
                                             MaterialTapTargetSize
                                                 .shrinkWrap,
-                                            // contentPadding: EdgeInsets.zero,
                                             checkColor: Colors.white,
                                             activeColor: Colors.transparent,
                                             side: const BorderSide(
                                                 color: Colors.white),
-                                            // controlAffinity: ListTileControlAffinity.leading,
-                                            // checkboxShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                                             value: dasBoardController
                                                 .imageListBool.value[index],
                                             onChanged: (val) {
@@ -196,14 +192,11 @@ class SelectWallpaperViewScreen extends StatelessWidget {
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(3),
                                 child: Container(
-                                  // height: Get.height * 0.15,
-                                  // width: Get.width * 0.33,
                                   alignment: Alignment.bottomCenter,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(3),
                                   ),
                                   child: CachedNetworkImage(
-                                    // height: kIsWeb?120:Get.height * 0.15,
                                     width: Get.width * 0.33,
                                     imageUrl:
                                     '${snapshot.data?.docs[index]['image'][0]['imageLink']}',
@@ -239,14 +232,11 @@ class SelectWallpaperViewScreen extends StatelessWidget {
                                               materialTapTargetSize:
                                               MaterialTapTargetSize
                                                   .shrinkWrap,
-                                              // contentPadding: EdgeInsets.zero,
                                               checkColor: Colors.white,
                                               activeColor:
                                               Colors.transparent,
                                               side: const BorderSide(
                                                   color: Colors.white),
-                                              // controlAffinity: ListTileControlAffinity.leading,
-                                              // checkboxShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                                               value: dasBoardController
                                                   .imageListBool
                                                   .value[index],

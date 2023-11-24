@@ -35,7 +35,6 @@ class SignUpScreen extends StatelessWidget {
                     children: [
                       Container(
                         height:   MediaQuery.of(context).size.height * 0.5,
-                        // width: Get.width * 0.8,
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.fill,
@@ -79,7 +78,6 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Validation for Email
                   Padding(
                     padding:  EdgeInsets.symmetric(horizontal: Get.width * 0.04),
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +91,6 @@ class SignUpScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.01,
                         ),
-                        // password
                         Obx(() =>  TextFieldCommonWidget2(
                           onTapIcon: () {
 
@@ -119,7 +116,6 @@ class SignUpScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.01,
                         ),
-                        // Confirm Password
                         Obx(() =>  TextFieldCommonWidget2(
                           onTapIcon: () {
 
@@ -139,7 +135,6 @@ class SignUpScreen extends StatelessWidget {
                           hintText: "enter confirm password",
                           isShowViciblity: true,
                         ),),
-                        // Validation for Password
                         Obx(() =>    signUpController.confirmPasswordErrorMessage.value.isEmpty
                             ? const SizedBox()
                             : Text(signUpController.confirmPasswordErrorMessage.value, style: TextStyle(color: const Color(0xFFA2000F),fontSize: Get.height * 0.02)),),
@@ -150,7 +145,6 @@ class SignUpScreen extends StatelessWidget {
                         Center(
                           child: GestureDetector(
                             onTap: () {
-                              // Get.to(SelectWallpaperViewScreen());
                               signUpController.validateEmail();
                               signUpController.validatePassword();
                               signUpController.validateConfirmPassword();
@@ -169,7 +163,6 @@ class SignUpScreen extends StatelessWidget {
                               child: Text(
                                 StringRes.Signup,
                                 style: TextStyle(
-                                  //  fontWeight: FontWeight.w600,
                                     fontSize: kIsWeb?24:Get.width * 0.07,
                                     color: Colors.black,
                                     fontFamily: "boldfont"),
@@ -273,7 +266,6 @@ class TextFieldCommonWidget2 extends StatelessWidget {
           decoration: BoxDecoration(
               color: ColorRes.white.withOpacity(0.10),
               borderRadius: BorderRadius.circular(10)),
-        //  margin: EdgeInsets.only(left: width * 0.035, right: width * 0.01),
           child: TextField(
             obscureText: obscureText ?? false,
             readOnly: readOnly ?? false,

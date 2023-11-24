@@ -144,8 +144,6 @@ class CategoriesScreen extends StatelessWidget {
                                         children: [
                                           Container(
                                             clipBehavior: Clip.hardEdge,
-                                            // height:kIsWeb? 230:Get.height * 0.184,
-                                            // width: Get.width * 0.86,
                                             alignment:
                                             Alignment.bottomCenter,
                                             margin: const EdgeInsets.only(
@@ -159,7 +157,6 @@ class CategoriesScreen extends StatelessWidget {
                                               ),
                                             ),
                                             child: CachedNetworkImage(
-                                              // height:  kIsWeb?160:Get.height * 0.184,
                                               width: Get.width * 0.86,
                                               imageUrl: snapshot
                                                   .data?.docs[index]
@@ -180,8 +177,6 @@ class CategoriesScreen extends StatelessWidget {
                                           ),
                                           Container(
                                             clipBehavior: Clip.hardEdge,
-                                            // height: Get.height * 0.184,
-                                            // width: Get.width * 0.86,
                                             alignment:
                                             Alignment.bottomCenter,
                                             margin: const EdgeInsets.only(
@@ -229,7 +224,7 @@ class CategoriesScreen extends StatelessWidget {
                       }
                     },
                   ),
-                 kIsWeb? SizedBox():FaveBookBannerAds(),
+                 kIsWeb? const SizedBox():const FaveBookBannerAds(),
                 ],
               ),
             ],

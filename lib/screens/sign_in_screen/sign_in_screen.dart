@@ -32,7 +32,6 @@ class SignInScreen extends StatelessWidget {
                     children: [
                       Container(
                         height: MediaQuery.of(context).size.height * 0.48,
-                        // width: Get.width * 0.8,
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.fill,
@@ -162,7 +161,6 @@ class SignInScreen extends StatelessWidget {
                               child: Text(
                                 StringRes.Signin,
                                 style: TextStyle(
-                                    //  fontWeight: FontWeight.w600,
                                     fontSize: kIsWeb?24:Get.width * 0.07,
                                     color: Colors.black,
                                     fontFamily: "boldfont"),
@@ -280,7 +278,6 @@ class TextFieldCommonWidget2 extends StatelessWidget {
           decoration: BoxDecoration(
               color: ColorRes.white.withOpacity(0.10),
               borderRadius: BorderRadius.circular(10)),
-          //  margin: EdgeInsets.only(left: width * 0.035, right: width * 0.01),
           child: TextField(
             obscureText: obscureText ?? false,
             readOnly: readOnly ?? false,

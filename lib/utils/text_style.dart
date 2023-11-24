@@ -49,7 +49,6 @@ TextStyle light({Color? color,
   );
 }
 
-
 TextStyle bold({Color? color,
   double? fontSize,
   double? letterSpacing,

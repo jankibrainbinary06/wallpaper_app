@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wallpaperapp/screens/dashboar_screen/dashboard_controller.dart';
-import 'package:wallpaperapp/services/facebook_ads/Interstitial_ads/Interstitial_ads.dart';
-import 'package:wallpaperapp/services/facebook_ads/baner_ads/baner_ads.dart';
 import 'package:wallpaperapp/utils/assets_res.dart';
 
 Widget bottomNavigationBar(BuildContext context) {

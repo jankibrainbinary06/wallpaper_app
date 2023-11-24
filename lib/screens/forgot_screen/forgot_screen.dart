@@ -29,14 +29,12 @@ class ForgotPasswordScreen extends StatelessWidget {
                 children: [
                   Container(
                     height: Get.height * 0.53,
-                    // width: Get.width * 0.8,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.fill,
                             image: AssetImage(AssetRes.spleashScrren))),
                   ),
                   Positioned(
-                    //top: Get.height * 0.42,
                     bottom: 0,
                     left: Get.width * 0.04,
                     child: Column(
@@ -113,7 +111,6 @@ class ForgotPasswordScreen extends StatelessWidget {
                             forgotPasswordScreenController.resetPassword(
                                 forgotPasswordScreenController
                                     .emailController.text);
-                            // Get.to(ForgotPasswordOtpScreen());
                           }
                         },
                         child: Container(
@@ -126,7 +123,6 @@ class ForgotPasswordScreen extends StatelessWidget {
                           child: Text(
                             StringRes.Continue,
                             style: TextStyle(
-                                //  fontWeight: FontWeight.w600,
                                 fontSize: kIsWeb?24: Get.width * 0.06,
                                 color: Colors.black,
                                 fontFamily: "boldfont"),
@@ -209,7 +205,6 @@ class TextFieldCommonWidget2 extends StatelessWidget {
           decoration: BoxDecoration(
               color: ColorRes.white.withOpacity(0.10),
               borderRadius: BorderRadius.circular(10)),
-          //  margin: EdgeInsets.only(left: width * 0.035, right: width * 0.01),
           child: TextField(
             obscureText: obscureText ?? false,
             readOnly: readOnly ?? false,
@@ -254,7 +249,6 @@ class TextFieldCommonWidget2 extends StatelessWidget {
                 )),
           ),
         ),
-        //   SizedBox(height: height * 0.015),
       ],
     );
   }

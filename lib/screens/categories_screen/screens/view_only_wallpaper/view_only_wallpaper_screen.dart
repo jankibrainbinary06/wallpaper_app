@@ -316,14 +316,10 @@ class ViewOnlyWallpaperScreen extends StatelessWidget {
                                             PrefKeys.downloadImageList,
                                             viewOnlyWallpaperController
                                                 .downloadImages);
-                                        var data = PrefService.getList(
-                                            PrefKeys.downloadImageList);
-
                                         viewOnlyWallpaperController
                                             .loader.value = false;
                                         viewOnlyWallpaperController
                                             .update(['viewOnly']);
-                                        // Get.to(DownloadScreen());
                                         Get.snackbar(
                                             'Yay!!', "Image is downloaded",
                                             snackPosition: SnackPosition.TOP,

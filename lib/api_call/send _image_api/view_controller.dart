@@ -1,7 +1,8 @@
+// ignore_for_file: empty_catches
+
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:image/image.dart' as img;
 import 'package:wallpaperapp/api_call/send%20_image_api/send_image_api.dart';
 
 class ImageController extends GetxController {
@@ -21,10 +22,8 @@ class ImageController extends GetxController {
       // final List<int> pngBytes = img.encodePng(originalImage as img.Image);
 
 
-      print("=======================$selectedImagePath");
       update(["image"]);
     } else {
-      print('No image selected.');
     }
   }
 
@@ -32,7 +31,6 @@ class ImageController extends GetxController {
     try {
       await PostImageApi.postImageApi(File(selectedImagePath));
     } catch (e) {
-      print("-------------------------------$e");
     }
   }
 }

@@ -10,26 +10,12 @@ import 'package:wallpaperapp/utils/strings.dart';
 
 class HomeController extends GetxController {
   bool isFavourite = false;
-
-  RxInt selectedIndex = 1.obs;
   List aBoolList = List.generate(1, (index) => false);
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  List<bool> categoryBool = [];
-  List isFavBoolList = [];
 
   List allCategory = [];
-  List imageList = [
-    AssetRes.wallpaperpre1,
-    AssetRes.wallpaperpre2,
-    AssetRes.wallpaperpre3,
-    AssetRes.wallpaperpre4,
-    AssetRes.wallpaperpre5,
-    AssetRes.wallpaperpre6,
-    AssetRes.wallpaperpre7,
-    AssetRes.wallpaperpre8,
-    AssetRes.wallpaperpre9,
-  ];
+
   List drawerImageList = [
     AssetRes.homeIcon,
     AssetRes.categoriesIcon,

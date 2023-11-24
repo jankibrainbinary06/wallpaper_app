@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -22,11 +21,8 @@ class _CustomBannerAdState extends State<CustomBannerAd> {
       size: AdSize.banner,
       adUnitId: Platform.isAndroid?"ca-app-pub-3940256099942544/6300978111":"ca-app-pub-3940256099942544/2934735716",
       listener: BannerAdListener(onAdFailedToLoad: (ad, error) {
-        print("Ad Failed to Load");
         ad.dispose();
-      },
-          onAdLoaded: (ad) {
-            print("Ad Loaded");
+      }, onAdLoaded: (ad) {
             setState(() {
               isBannerAdLoaded = true;
             });
@@ -45,7 +41,6 @@ class _CustomBannerAdState extends State<CustomBannerAd> {
       child: AdWidget(
         ad: bannerAd!,
       ),
-    )
-        : const SizedBox();
+    ) : const SizedBox();
   }
 }

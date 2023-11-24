@@ -5,29 +5,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:wallpaperapp/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:wallpaperapp/services/pref_servies.dart';
-import 'package:wallpaperapp/utils/assets_res.dart';
 import 'package:wallpaperapp/utils/pref_key.dart';
 
 class OnlyViewWallpaperController extends GetxController {
-  RxBool selectLike = false.obs;
 
   bool isLike = false;
   RxBool loader = false.obs;
-
   bool isMenuOpen = false;
 
   PageController pageController = PageController();
   List<String> downloadImages = PrefService.getList(PrefKeys.downloadImageList);
 
   int initialIndex = 0;
-  List imageList = [
-    AssetRes.wallpaperpre1,
-    AssetRes.wallpaperpre2,
-    AssetRes.wallpaperpre3,
-    AssetRes.wallpaperpre4,
-    AssetRes.wallpaperpre5,
-    AssetRes.wallpaperpre6,
-  ];
   CollectionReference user = FirebaseFirestore.instance.collection('user');
 
   @override
@@ -124,7 +113,6 @@ class OnlyViewWallpaperController extends GetxController {
       user.doc(id).update({
         'favourite': favList,
       });
-      // Get.off(FavoritesScreen());
     } else {
       Get.to(SignInScreen());
     }

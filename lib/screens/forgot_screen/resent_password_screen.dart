@@ -30,14 +30,12 @@ class ResentPasswordScreen extends StatelessWidget {
                 children: [
                   Container(
                     height:MediaQuery.of(context).size.height * 0.53,
-                    // width: Get.width * 0.8,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.fill,
                             image: AssetImage(AssetRes.spleashScrren))),
                   ),
                   Positioned(
-                    //top: Get.height * 0.42,
                     bottom: 0,
                     left: Get.width * 0.04,
                     child: Column(
@@ -173,7 +171,6 @@ class ResentPasswordScreen extends StatelessWidget {
                           child: Text(
                             StringRes.Continue,
                             style: TextStyle(
-                                //  fontWeight: FontWeight.w600,
                                 fontSize: kIsWeb?24: Get.width * 0.06,
                                 color: Colors.black,
                                 fontFamily: "boldfont"),
@@ -181,9 +178,6 @@ class ResentPasswordScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // SizedBox(
-                    //   height: Get.height * 0.07,
-                    // ),
                   ],
                 ),
               )
@@ -256,7 +250,6 @@ class TextFieldCommonWidget2 extends StatelessWidget {
           decoration: BoxDecoration(
               color: ColorRes.white.withOpacity(0.10),
               borderRadius: BorderRadius.circular(10)),
-          //  margin: EdgeInsets.only(left: width * 0.035, right: width * 0.01),
           child: TextField(
             obscureText: obscureText ?? false,
             readOnly: readOnly ?? false,
